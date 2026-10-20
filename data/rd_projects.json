@@ -1,0 +1,89 @@
+{
+ "about": "Twelve invented project summaries of the kind a client sends before an R&D claim. 'expected' is Adam's own call as a reviewer, not HMRC's: borderline means a competent reviewer would want more evidence before claiming.",
+ "items": [
+  {
+   "id": "P01",
+   "company": "Brightwell Robotics Ltd",
+   "title": "Grip control for deformable parcels",
+   "summary": "Commercial grippers fail on soft, irregular parcels (polybags, padded envelopes) because force sensing assumes rigid objects. We tried three published control approaches and none held parcels above 2 m/s arm speed without crushing or dropping them. We developed a new sensor fusion method combining tactile arrays with vision-based deformation estimates. It was unclear at the start whether deformation could be estimated fast enough (under 5 ms) on embedded hardware; two architectures failed before the third met the target.",
+   "expected": "qualifies"
+  },
+  {
+   "id": "P02",
+   "company": "Harlow & Finch Ltd",
+   "title": "New online shop",
+   "summary": "We moved our online shop from Wix to Shopify Plus and commissioned a custom theme from an agency. The project included migrating 4,000 products, setting up Klarna payments and integrating with our Royal Mail Click & Drop account. It took longer than planned because the product data was messy and the agency needed several design rounds.",
+   "expected": "does_not_qualify"
+  },
+  {
+   "id": "P03",
+   "company": "Kestrel Logistics Ltd",
+   "title": "Move to the cloud",
+   "summary": "We migrated our on-premise SQL Server warehouse database to Azure SQL using Microsoft's Data Migration Assistant. We followed Microsoft's documented migration path, re-pointed our reporting tools and ran both systems in parallel for a month. The main challenge was scheduling downtime around peak season.",
+   "expected": "does_not_qualify"
+  },
+  {
+   "id": "P04",
+   "company": "Corran Materials Ltd",
+   "title": "Low-temperature curing adhesive",
+   "summary": "Customers bonding heat-sensitive composites need an epoxy adhesive that cures fully below 60C while keeping lap shear strength above 25 MPa. Published formulations either cure slowly or lose strength. We tested 140 formulations varying accelerators and filler chemistry; the interaction between the accelerator and the filler surface treatment was not understood and early batches failed unpredictably. We identified a mechanism and reached 27 MPa at 55C.",
+   "expected": "qualifies"
+  },
+  {
+   "id": "P05",
+   "company": "Little Loaf Bakery Ltd",
+   "title": "Gluten-free sourdough",
+   "summary": "We wanted a gluten-free sourdough that tastes as good as our wheat loaf. Our head baker tried around 30 recipes using different flour blends, psyllium husk and hydration levels, and a customer taste panel chose the winner. It is now our best-selling gluten-free product.",
+   "expected": "borderline"
+  },
+  {
+   "id": "P06",
+   "company": "Northgate Retail Group Ltd",
+   "title": "Understanding customer churn",
+   "summary": "We commissioned a study of why loyalty-card customers stop shopping with us. Analysts surveyed 3,000 lapsed customers and used regression analysis on purchase histories to identify the factors most associated with churn. The findings shaped a new pricing strategy and loyalty scheme.",
+   "expected": "does_not_qualify"
+  },
+  {
+   "id": "P07",
+   "company": "Orbital Data Systems Ltd",
+   "title": "Telemetry compression for small satellites",
+   "summary": "Our cubesats must send sensor telemetry over a 9.6 kbps link with a 2 W power budget for the onboard computer. Standard lossless compressors either used too much power or achieved under 2:1. We developed a new predictive compression scheme tailored to correlated sensor channels. It was not known whether 4:1 was achievable within the power budget; early prototypes either missed the ratio or overran power. Version three achieved 4.3:1 at 1.6 W in thermal vacuum testing.",
+   "expected": "qualifies"
+  },
+  {
+   "id": "P08",
+   "company": "Pinecrest Services Ltd",
+   "title": "Xero and Salesforce integration",
+   "summary": "We connected Salesforce to Xero so that closed deals create invoices automatically. Our developer used both companies' published APIs and an off-the-shelf connector, writing custom field mappings for our product codes. Testing took two weeks.",
+   "expected": "does_not_qualify"
+  },
+  {
+   "id": "P09",
+   "company": "Medway Pharma Ltd",
+   "title": "Oral film version of an existing drug",
+   "summary": "We are reformulating an approved tablet as a dissolvable oral film for patients who cannot swallow tablets. The active ingredient degrades in the presence of the film-forming polymers used in existing products, and it was not known whether any polymer system could keep degradation under 2% over 12 months. We screened 22 polymer and plasticiser systems and ran accelerated stability studies; two systems now meet the specification.",
+   "expected": "qualifies"
+  },
+  {
+   "id": "P10",
+   "company": "Glow Studio Ltd",
+   "title": "Redesign of our meditation app",
+   "summary": "We redesigned our meditation app with a new visual style, smoother animations and a simpler onboarding flow, built in React Native. User testing showed a 20% improvement in day-7 retention. The work was led by our design team with two contract developers.",
+   "expected": "does_not_qualify"
+  },
+  {
+   "id": "P11",
+   "company": "Ledgerline Payments Ltd",
+   "title": "Ledger throughput beyond database limits",
+   "summary": "Our payment ledger had to reach 50,000 transactions per second with strict ordering per account. Our database vendor advised that their documented sharding approach could not guarantee ordering above about 12,000 tps. We designed and tested a new partitioning and consensus scheme; it was uncertain whether ordering could be preserved under node failure. Two designs failed chaos testing before the third passed at 54,000 tps.",
+   "expected": "qualifies"
+  },
+  {
+   "id": "P12",
+   "company": "Brookfield Legal Services Ltd",
+   "title": "AI document summaries",
+   "summary": "We built a tool that summarises client documents using the OpenAI API. Our developer experimented with prompts, chunking strategies and temperature settings over three months until summaries were accurate enough for fee earners to rely on. Accuracy improved from about 60% to 90% on our test set.",
+   "expected": "borderline"
+  }
+ ]
+}

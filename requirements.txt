@@ -1,0 +1,5 @@
+fastapi==0.141.1
+python-dotenv==1.2.3
+rich==15.0.0
+typesafe-sdk==0.7.1
+uvicorn==0.53.0

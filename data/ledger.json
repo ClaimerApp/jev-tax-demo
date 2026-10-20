@@ -1,0 +1,2022 @@
+{
+ "company": {
+  "name": "Brightwell Robotics Ltd",
+  "about": "UK limited company (12 staff) that designs and builds warehouse robots. VAT registered on the standard scheme, quarterly returns. Carries out R&D. Year end 31 March 2027. Director: Sam Patel."
+ },
+ "items": [
+  {
+   "date": "2026-04-06",
+   "bank_text": "GITHUB, INC. GITHUB.COM",
+   "receipt_note": null,
+   "amount": 84,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L001"
+  },
+  {
+   "date": "2026-04-08",
+   "bank_text": "BT GROUP PLC DD",
+   "receipt_note": null,
+   "amount": 123.4,
+   "posted": {
+    "nominal": "7550 Telephone & internet",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L002"
+  },
+  {
+   "date": "2026-04-09",
+   "bank_text": "HMRC VAT",
+   "receipt_note": "VAT return Q1",
+   "amount": 14800,
+   "posted": {
+    "nominal": "2200 VAT control",
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L003"
+  },
+  {
+   "date": "2026-04-10",
+   "bank_text": "AMZN MKTP UK*2K4",
+   "receipt_note": null,
+   "amount": 184.87,
+   "posted": {
+    "nominal": "9000 General expenses",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": null,
+    "vat": null,
+    "rd": null
+   },
+   "planted_mistake": false,
+   "id": "L004"
+  },
+  {
+   "date": "2026-04-11",
+   "bank_text": "THE CASTLE PUB - STAFF",
+   "receipt_note": "Team summer party (all staff invited)",
+   "amount": 1140,
+   "posted": {
+    "nominal": "7900 Entertaining: clients",
+    "ct": "disallowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": true,
+   "id": "L005"
+  },
+  {
+   "date": "2026-04-14",
+   "bank_text": "GITHUB, INC. GITHUB.COM",
+   "receipt_note": null,
+   "amount": 84,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L006"
+  },
+  {
+   "date": "2026-04-14",
+   "bank_text": "CROYDON COUNCIL NNDR",
+   "receipt_note": "Business rates",
+   "amount": 612,
+   "posted": {
+    "nominal": "8100 Business rates",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L007"
+  },
+  {
+   "date": "2026-04-15",
+   "bank_text": "LINKEDIN IRL JOBS",
+   "receipt_note": "Job post: embedded engineer",
+   "amount": 299.03,
+   "posted": {
+    "nominal": "7800 Advertising & recruitment",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L008"
+  },
+  {
+   "date": "2026-04-16",
+   "bank_text": "TESCO STORES 3021",
+   "receipt_note": null,
+   "amount": 60.84,
+   "posted": {
+    "nominal": "7910 Staff welfare & events",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": null,
+    "vat": null,
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L009"
+  },
+  {
+   "date": "2026-04-17",
+   "bank_text": "LINKEDIN IRL JOBS",
+   "receipt_note": "Job post: embedded engineer",
+   "amount": 398.36,
+   "posted": {
+    "nominal": "7800 Advertising & recruitment",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L010"
+  },
+  {
+   "date": "2026-04-18",
+   "bank_text": "UBER *TRIP",
+   "receipt_note": null,
+   "amount": 16.41,
+   "posted": {
+    "nominal": "7400 Travel",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": null,
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L011"
+  },
+  {
+   "date": "2026-04-26",
+   "bank_text": "HMRC CUMBERNAULD PAYE",
+   "receipt_note": "Monthly PAYE/NIC",
+   "amount": 10250.81,
+   "posted": {
+    "nominal": "2210 PAYE & NI control",
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "rd": null
+   },
+   "planted_mistake": false,
+   "id": "L012"
+  },
+  {
+   "date": "2026-04-27",
+   "bank_text": "TRAINLINE.COM",
+   "receipt_note": "Return to Birmingham, customer visit",
+   "amount": 153.63,
+   "posted": {
+    "nominal": "7400 Travel",
+    "ct": "allowable",
+    "vat": "zero",
+    "vat_label": "Zero Rated Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "zero",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L013"
+  },
+  {
+   "date": "2026-04-27",
+   "bank_text": "HISCOX INSURANCE DD",
+   "receipt_note": "Business insurance premium",
+   "amount": 186,
+   "posted": {
+    "nominal": "7300 Insurance",
+    "ct": "allowable",
+    "vat": "exempt",
+    "vat_label": "Exempt Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "exempt",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L014"
+  },
+  {
+   "date": "2026-04-28",
+   "bank_text": "RS COMPONENTS LTD",
+   "receipt_note": "Motor drivers + sensors for prototype gripper",
+   "amount": 691.09,
+   "posted": {
+    "nominal": "8200 R&D consumables",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L015"
+  },
+  {
+   "date": "2026-04-28",
+   "bank_text": "AMZN MKTP UK*2K4",
+   "receipt_note": null,
+   "amount": 47.09,
+   "posted": {
+    "nominal": "9000 General expenses",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": null,
+    "vat": null,
+    "rd": null
+   },
+   "planted_mistake": false,
+   "id": "L016"
+  },
+  {
+   "date": "2026-05-01",
+   "bank_text": "CROYDON COUNCIL NNDR",
+   "receipt_note": "Business rates",
+   "amount": 612,
+   "posted": {
+    "nominal": "8100 Business rates",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L017"
+  },
+  {
+   "date": "2026-05-02",
+   "bank_text": "BT GROUP PLC DD",
+   "receipt_note": null,
+   "amount": 123.79,
+   "posted": {
+    "nominal": "7550 Telephone & internet",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L018"
+  },
+  {
+   "date": "2026-05-04",
+   "bank_text": "BT GROUP PLC DD",
+   "receipt_note": null,
+   "amount": 120.4,
+   "posted": {
+    "nominal": "7550 Telephone & internet",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L019"
+  },
+  {
+   "date": "2026-05-04",
+   "bank_text": "TFL PCN WESTMINSTER",
+   "receipt_note": "Parking penalty, van",
+   "amount": 80,
+   "posted": {
+    "nominal": "7400 Travel",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "disallowable",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": true,
+   "id": "L020"
+  },
+  {
+   "date": "2026-05-05",
+   "bank_text": "TRAINLINE.COM",
+   "receipt_note": "Return to Birmingham, customer visit",
+   "amount": 86.29,
+   "posted": {
+    "nominal": "7400 Travel",
+    "ct": "allowable",
+    "vat": "zero",
+    "vat_label": "Zero Rated Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "zero",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L021"
+  },
+  {
+   "date": "2026-05-06",
+   "bank_text": "ROYAL MAIL GROUP",
+   "receipt_note": "Stamps",
+   "amount": 60.76,
+   "posted": {
+    "nominal": "7500 Postage & stationery",
+    "ct": "allowable",
+    "vat": "exempt",
+    "vat_label": "Exempt Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "exempt",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L022"
+  },
+  {
+   "date": "2026-05-06",
+   "bank_text": "AMZN MKTP UK*2K4",
+   "receipt_note": null,
+   "amount": 170.86,
+   "posted": {
+    "nominal": "9000 General expenses",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": null,
+    "vat": null,
+    "rd": null
+   },
+   "planted_mistake": false,
+   "id": "L023"
+  },
+  {
+   "date": "2026-05-07",
+   "bank_text": "HISCOX INSURANCE DD",
+   "receipt_note": "Business insurance premium",
+   "amount": 186,
+   "posted": {
+    "nominal": "7300 Insurance",
+    "ct": "allowable",
+    "vat": "exempt",
+    "vat_label": "Exempt Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "exempt",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L024"
+  },
+  {
+   "date": "2026-05-10",
+   "bank_text": "NETFLIX.COM",
+   "receipt_note": "Director's personal subscription on company card",
+   "amount": 18.99,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": true,
+   "id": "L025"
+  },
+  {
+   "date": "2026-05-11",
+   "bank_text": "BMW FINANCIAL SVCS",
+   "receipt_note": "BMW i4 company car, deposit",
+   "amount": 6000,
+   "posted": {
+    "nominal": "0040 Motor vehicles (fixed asset)",
+    "ct": "capital",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "capital",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": true,
+   "id": "L026"
+  },
+  {
+   "date": "2026-05-13",
+   "bank_text": "ABC INTERIORS LTD",
+   "receipt_note": "Workshop partitioning and fit-out",
+   "amount": 18400,
+   "posted": {
+    "nominal": "9000 General expenses",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "capital",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": true,
+   "id": "L027"
+  },
+  {
+   "date": "2026-05-14",
+   "bank_text": "TRAINLINE.COM",
+   "receipt_note": "Return to Birmingham, customer visit",
+   "amount": 139.7,
+   "posted": {
+    "nominal": "7400 Travel",
+    "ct": "allowable",
+    "vat": "zero",
+    "vat_label": "Zero Rated Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "zero",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L028"
+  },
+  {
+   "date": "2026-05-14",
+   "bank_text": "S PATEL DLA REPAYMENT",
+   "receipt_note": "Repay director's loan",
+   "amount": 5000,
+   "posted": {
+    "nominal": "2400 Director's loan account",
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L029"
+  },
+  {
+   "date": "2026-05-18",
+   "bank_text": "PREMIER INN 4421",
+   "receipt_note": "Hotel, customer site install Leeds",
+   "amount": 95.71,
+   "posted": {
+    "nominal": "7400 Travel",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L030"
+  },
+  {
+   "date": "2026-05-18",
+   "bank_text": "CROYDON COUNCIL NNDR",
+   "receipt_note": "Business rates",
+   "amount": 612,
+   "posted": {
+    "nominal": "8100 Business rates",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L031"
+  },
+  {
+   "date": "2026-05-22",
+   "bank_text": "SMITH & CO ACCOUNTANTS",
+   "receipt_note": "Q1 bookkeeping + VAT return",
+   "amount": 780,
+   "posted": {
+    "nominal": "7600 Legal & professional fees",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L032"
+  },
+  {
+   "date": "2026-05-23",
+   "bank_text": "BT GROUP PLC DD",
+   "receipt_note": null,
+   "amount": 124.93,
+   "posted": {
+    "nominal": "7550 Telephone & internet",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L033"
+  },
+  {
+   "date": "2026-05-25",
+   "bank_text": "FIGMA, INC.",
+   "receipt_note": "Design seats for marketing website",
+   "amount": 45,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L034"
+  },
+  {
+   "date": "2026-05-25",
+   "bank_text": "RS COMPONENTS LTD",
+   "receipt_note": "Motor drivers + sensors for prototype gripper",
+   "amount": 847.49,
+   "posted": {
+    "nominal": "8200 R&D consumables",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L035"
+  },
+  {
+   "date": "2026-05-28",
+   "bank_text": "UNIVERSITY OF SURREY RES",
+   "receipt_note": "Grip-force research contract, stage 2",
+   "amount": 12500,
+   "posted": {
+    "nominal": "8300 Subcontracted research",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L036"
+  },
+  {
+   "date": "2026-05-30",
+   "bank_text": "HETZNER ONLINE GMBH",
+   "receipt_note": "GPU servers for robot motion simulation",
+   "amount": 459.66,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L037"
+  },
+  {
+   "date": "2026-06-01",
+   "bank_text": "FIGMA, INC.",
+   "receipt_note": "Design seats for marketing website",
+   "amount": 45,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L038"
+  },
+  {
+   "date": "2026-06-02",
+   "bank_text": "TWICKENHAM HOSPITALITY",
+   "receipt_note": "Box for 6, 4 customers + 2 staff",
+   "amount": 2880,
+   "posted": {
+    "nominal": "7910 Staff welfare & events",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "disallowable",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": true,
+   "id": "L039"
+  },
+  {
+   "date": "2026-06-04",
+   "bank_text": "HETZNER ONLINE GMBH",
+   "receipt_note": "GPU servers for robot motion simulation",
+   "amount": 1826.76,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L040"
+  },
+  {
+   "date": "2026-06-08",
+   "bank_text": "HMRC LATE FILING PENALTY",
+   "receipt_note": null,
+   "amount": 100,
+   "posted": {
+    "nominal": "7600 Legal & professional fees",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "disallowable",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": true,
+   "id": "L041"
+  },
+  {
+   "date": "2026-06-10",
+   "bank_text": "VIKING DIRECT",
+   "receipt_note": "Printer paper, toner",
+   "amount": 151.27,
+   "posted": {
+    "nominal": "7500 Postage & stationery",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L042"
+  },
+  {
+   "date": "2026-06-12",
+   "bank_text": "HMRC CUMBERNAULD PAYE",
+   "receipt_note": "Monthly PAYE/NIC",
+   "amount": 11132.23,
+   "posted": {
+    "nominal": "2210 PAYE & NI control",
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "rd": null
+   },
+   "planted_mistake": false,
+   "id": "L043"
+  },
+  {
+   "date": "2026-06-13",
+   "bank_text": "BARCLAYS BANK CHARGES",
+   "receipt_note": null,
+   "amount": 29.53,
+   "posted": {
+    "nominal": "7750 Bank charges",
+    "ct": "allowable",
+    "vat": "exempt",
+    "vat_label": "Exempt Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "exempt",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L044"
+  },
+  {
+   "date": "2026-06-16",
+   "bank_text": "FORD TRANSIT CENTRE",
+   "receipt_note": "Transit Custom van, deposit",
+   "amount": 8500,
+   "posted": {
+    "nominal": "0040 Motor vehicles (fixed asset)",
+    "ct": "capital",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "capital",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L045"
+  },
+  {
+   "date": "2026-06-17",
+   "bank_text": "SMITH & CO ACCOUNTANTS",
+   "receipt_note": "Q1 bookkeeping + VAT return",
+   "amount": 780,
+   "posted": {
+    "nominal": "7600 Legal & professional fees",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L046"
+  },
+  {
+   "date": "2026-06-17",
+   "bank_text": "HMRC CUMBERNAULD PAYE",
+   "receipt_note": "Monthly PAYE/NIC",
+   "amount": 10723.95,
+   "posted": {
+    "nominal": "2210 PAYE & NI control",
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "rd": null
+   },
+   "planted_mistake": false,
+   "id": "L047"
+  },
+  {
+   "date": "2026-06-17",
+   "bank_text": "LANDSEC PROPERTIES DD",
+   "receipt_note": "Quarterly rent, Croydon workshop",
+   "amount": 7250,
+   "posted": {
+    "nominal": "7100 Rent",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": null,
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L048"
+  },
+  {
+   "date": "2026-06-20",
+   "bank_text": "FARNELL UK",
+   "receipt_note": "PCB test components",
+   "amount": 98.41,
+   "posted": {
+    "nominal": "8200 R&D consumables",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L049"
+  },
+  {
+   "date": "2026-06-21",
+   "bank_text": "TRANSFER TO SAVER 4471",
+   "receipt_note": null,
+   "amount": 20000,
+   "posted": {
+    "nominal": "1210 Savings account",
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L050"
+  },
+  {
+   "date": "2026-06-23",
+   "bank_text": "TRAINLINE.COM",
+   "receipt_note": "Return to Birmingham, customer visit",
+   "amount": 47.01,
+   "posted": {
+    "nominal": "7400 Travel",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "zero",
+    "rd": false
+   },
+   "planted_mistake": true,
+   "id": "L051"
+  },
+  {
+   "date": "2026-06-24",
+   "bank_text": "WATERSTONES",
+   "receipt_note": "Control systems textbooks",
+   "amount": 60.89,
+   "posted": {
+    "nominal": "7500 Postage & stationery",
+    "ct": "allowable",
+    "vat": "zero",
+    "vat_label": "Zero Rated Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "zero",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L052"
+  },
+  {
+   "date": "2026-06-25",
+   "bank_text": "HETZNER ONLINE GMBH",
+   "receipt_note": "GPU servers for robot motion simulation",
+   "amount": 1406.3,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": true
+   },
+   "planted_mistake": true,
+   "id": "L053"
+  },
+  {
+   "date": "2026-06-27",
+   "bank_text": "ROYAL MAIL GROUP",
+   "receipt_note": "Stamps",
+   "amount": 41.28,
+   "posted": {
+    "nominal": "7500 Postage & stationery",
+    "ct": "allowable",
+    "vat": "exempt",
+    "vat_label": "Exempt Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "exempt",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L054"
+  },
+  {
+   "date": "2026-06-27",
+   "bank_text": "APPLE STORE R245",
+   "receipt_note": "MacBook Pro for new firmware engineer",
+   "amount": 2399,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "capital",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": true,
+   "id": "L055"
+  },
+  {
+   "date": "2026-06-30",
+   "bank_text": "BT GROUP PLC DD",
+   "receipt_note": null,
+   "amount": 118.18,
+   "posted": {
+    "nominal": "7550 Telephone & internet",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L056"
+  },
+  {
+   "date": "2026-06-30",
+   "bank_text": "BARCLAYS BANK CHARGES",
+   "receipt_note": null,
+   "amount": 31.15,
+   "posted": {
+    "nominal": "7750 Bank charges",
+    "ct": "allowable",
+    "vat": "exempt",
+    "vat_label": "Exempt Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "exempt",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L057"
+  },
+  {
+   "date": "2026-07-01",
+   "bank_text": "GITHUB, INC. GITHUB.COM",
+   "receipt_note": null,
+   "amount": 84,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L058"
+  },
+  {
+   "date": "2026-07-01",
+   "bank_text": "HISCOX INSURANCE DD",
+   "receipt_note": "Business insurance premium",
+   "amount": 186,
+   "posted": {
+    "nominal": "7300 Insurance",
+    "ct": "allowable",
+    "vat": "exempt",
+    "vat_label": "Exempt Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "exempt",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L059"
+  },
+  {
+   "date": "2026-07-01",
+   "bank_text": "UBER *TRIP",
+   "receipt_note": null,
+   "amount": 31.74,
+   "posted": {
+    "nominal": "7400 Travel",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": null,
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L060"
+  },
+  {
+   "date": "2026-07-01",
+   "bank_text": "PAYPAL *JHARRIS",
+   "receipt_note": null,
+   "amount": 433.97,
+   "posted": {
+    "nominal": "9000 General expenses",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": null,
+    "vat": null,
+    "rd": null
+   },
+   "planted_mistake": false,
+   "id": "L061"
+  },
+  {
+   "date": "2026-07-03",
+   "bank_text": "CROYDON COUNCIL NNDR",
+   "receipt_note": "Business rates",
+   "amount": 612,
+   "posted": {
+    "nominal": "8100 Business rates",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L062"
+  },
+  {
+   "date": "2026-07-03",
+   "bank_text": "HMRC CUMBERNAULD PAYE",
+   "receipt_note": "Monthly PAYE/NIC",
+   "amount": 10480.04,
+   "posted": {
+    "nominal": "2210 PAYE & NI control",
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "rd": null
+   },
+   "planted_mistake": false,
+   "id": "L063"
+  },
+  {
+   "date": "2026-07-06",
+   "bank_text": "GITHUB, INC. GITHUB.COM",
+   "receipt_note": null,
+   "amount": 84,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L064"
+  },
+  {
+   "date": "2026-07-06",
+   "bank_text": "UBER *TRIP",
+   "receipt_note": null,
+   "amount": 21.35,
+   "posted": {
+    "nominal": "7400 Travel",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": null,
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L065"
+  },
+  {
+   "date": "2026-07-09",
+   "bank_text": "BT GROUP PLC DD",
+   "receipt_note": null,
+   "amount": 123.45,
+   "posted": {
+    "nominal": "7550 Telephone & internet",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L066"
+  },
+  {
+   "date": "2026-07-09",
+   "bank_text": "BRITISH AIRWAYS 125",
+   "receipt_note": "LHR-FRA, trade show",
+   "amount": 214,
+   "posted": {
+    "nominal": "7400 Travel",
+    "ct": "allowable",
+    "vat": "zero",
+    "vat_label": "Zero Rated Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "zero",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L067"
+  },
+  {
+   "date": "2026-07-09",
+   "bank_text": "TRANSFER TO SAVER 4471",
+   "receipt_note": null,
+   "amount": 20000,
+   "posted": {
+    "nominal": "1210 Savings account",
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L068"
+  },
+  {
+   "date": "2026-07-11",
+   "bank_text": "FARNELL UK",
+   "receipt_note": "PCB test components",
+   "amount": 588.43,
+   "posted": {
+    "nominal": "8200 R&D consumables",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L069"
+  },
+  {
+   "date": "2026-07-11",
+   "bank_text": "THE IVY CHELSEA GARDEN",
+   "receipt_note": "Dinner with Acme Logistics (prospect)",
+   "amount": 386,
+   "posted": {
+    "nominal": "7400 Travel",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "disallowable",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": true,
+   "id": "L070"
+  },
+  {
+   "date": "2026-07-15",
+   "bank_text": "PAYPAL *JHARRIS",
+   "receipt_note": null,
+   "amount": 276.65,
+   "posted": {
+    "nominal": "9000 General expenses",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": null,
+    "vat": null,
+    "rd": null
+   },
+   "planted_mistake": false,
+   "id": "L071"
+  },
+  {
+   "date": "2026-07-16",
+   "bank_text": "HISCOX INSURANCE DD",
+   "receipt_note": "Business insurance premium",
+   "amount": 186,
+   "posted": {
+    "nominal": "7300 Insurance",
+    "ct": "allowable",
+    "vat": "exempt",
+    "vat_label": "Exempt Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "exempt",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L072"
+  },
+  {
+   "date": "2026-07-16",
+   "bank_text": "CROYDON COUNCIL NNDR",
+   "receipt_note": "Business rates",
+   "amount": 612,
+   "posted": {
+    "nominal": "8100 Business rates",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L073"
+  },
+  {
+   "date": "2026-07-23",
+   "bank_text": "RS COMPONENTS LTD",
+   "receipt_note": "Motor drivers + sensors for prototype gripper",
+   "amount": 590.26,
+   "posted": {
+    "nominal": "8200 R&D consumables",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L074"
+  },
+  {
+   "date": "2026-07-25",
+   "bank_text": "CROYDON COUNCIL NNDR",
+   "receipt_note": "Business rates",
+   "amount": 612,
+   "posted": {
+    "nominal": "8100 Business rates",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L075"
+  },
+  {
+   "date": "2026-07-31",
+   "bank_text": "REGUS MGMT UK",
+   "receipt_note": "Meeting room hire, London",
+   "amount": 210,
+   "posted": {
+    "nominal": "7100 Rent",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L076"
+  },
+  {
+   "date": "2026-08-02",
+   "bank_text": "BARCLAYS BANK CHARGES",
+   "receipt_note": null,
+   "amount": 22.56,
+   "posted": {
+    "nominal": "7750 Bank charges",
+    "ct": "allowable",
+    "vat": "exempt",
+    "vat_label": "Exempt Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "exempt",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L077"
+  },
+  {
+   "date": "2026-08-03",
+   "bank_text": "HETZNER ONLINE GMBH",
+   "receipt_note": "GPU servers for robot motion simulation",
+   "amount": 731.07,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L078"
+  },
+  {
+   "date": "2026-08-04",
+   "bank_text": "RS COMPONENTS LTD",
+   "receipt_note": "Motor drivers + sensors for prototype gripper",
+   "amount": 757.0,
+   "posted": {
+    "nominal": "8200 R&D consumables",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L079"
+  },
+  {
+   "date": "2026-08-05",
+   "bank_text": "HISCOX INSURANCE DD",
+   "receipt_note": "Business insurance premium",
+   "amount": 186,
+   "posted": {
+    "nominal": "7300 Insurance",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "exempt",
+    "rd": false
+   },
+   "planted_mistake": true,
+   "id": "L080"
+  },
+  {
+   "date": "2026-08-05",
+   "bank_text": "BARCLAYS BANK CHARGES",
+   "receipt_note": null,
+   "amount": 24.36,
+   "posted": {
+    "nominal": "7750 Bank charges",
+    "ct": "allowable",
+    "vat": "exempt",
+    "vat_label": "Exempt Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "exempt",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L081"
+  },
+  {
+   "date": "2026-08-08",
+   "bank_text": "AMZN MKTP UK*2K4",
+   "receipt_note": null,
+   "amount": 67.28,
+   "posted": {
+    "nominal": "9000 General expenses",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": null,
+    "vat": null,
+    "rd": null
+   },
+   "planted_mistake": false,
+   "id": "L082"
+  },
+  {
+   "date": "2026-08-11",
+   "bank_text": "BARCLAYS BANK CHARGES",
+   "receipt_note": null,
+   "amount": 26.14,
+   "posted": {
+    "nominal": "7750 Bank charges",
+    "ct": "allowable",
+    "vat": "exempt",
+    "vat_label": "Exempt Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "exempt",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L083"
+  },
+  {
+   "date": "2026-08-12",
+   "bank_text": "LANDSEC PROPERTIES DD",
+   "receipt_note": "Quarterly rent, Croydon workshop",
+   "amount": 7250,
+   "posted": {
+    "nominal": "7100 Rent",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": null,
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L084"
+  },
+  {
+   "date": "2026-08-15",
+   "bank_text": "PREMIER INN 4421",
+   "receipt_note": "Hotel, customer site install Leeds",
+   "amount": 125.51,
+   "posted": {
+    "nominal": "7400 Travel",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L085"
+  },
+  {
+   "date": "2026-08-16",
+   "bank_text": "GITHUB, INC. GITHUB.COM",
+   "receipt_note": null,
+   "amount": 84,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L086"
+  },
+  {
+   "date": "2026-08-19",
+   "bank_text": "PREMIER INN 4421",
+   "receipt_note": "Hotel, customer site install Leeds",
+   "amount": 138.23,
+   "posted": {
+    "nominal": "7400 Travel",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L087"
+  },
+  {
+   "date": "2026-08-20",
+   "bank_text": "DELL CORP LTD",
+   "receipt_note": "PowerEdge server for office file storage",
+   "amount": 4820,
+   "posted": {
+    "nominal": "0030 Office & computer equipment (fixed asset)",
+    "ct": "capital",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "capital",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L088"
+  },
+  {
+   "date": "2026-08-24",
+   "bank_text": "RS COMPONENTS LTD",
+   "receipt_note": "Motor drivers + sensors for prototype gripper",
+   "amount": 1526.63,
+   "posted": {
+    "nominal": "8200 R&D consumables",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L089"
+  },
+  {
+   "date": "2026-08-25",
+   "bank_text": "NETFLIX.COM",
+   "receipt_note": "Director's personal subscription on company card",
+   "amount": 18.99,
+   "posted": {
+    "nominal": "2400 Director's loan account",
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L090"
+  },
+  {
+   "date": "2026-08-26",
+   "bank_text": "FARNELL UK",
+   "receipt_note": "PCB test components",
+   "amount": 606.02,
+   "posted": {
+    "nominal": "8200 R&D consumables",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L091"
+  },
+  {
+   "date": "2026-08-27",
+   "bank_text": "GITHUB, INC. GITHUB.COM",
+   "receipt_note": null,
+   "amount": 84,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L092"
+  },
+  {
+   "date": "2026-08-27",
+   "bank_text": "FIGMA, INC.",
+   "receipt_note": "Design seats for marketing website",
+   "amount": 45,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L093"
+  },
+  {
+   "date": "2026-08-27",
+   "bank_text": "TESCO STORES 3021",
+   "receipt_note": null,
+   "amount": 45.1,
+   "posted": {
+    "nominal": "7910 Staff welfare & events",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": null,
+    "vat": null,
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L094"
+  },
+  {
+   "date": "2026-08-30",
+   "bank_text": "HETZNER ONLINE GMBH",
+   "receipt_note": "GPU servers for robot motion simulation",
+   "amount": 605.75,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L095"
+  },
+  {
+   "date": "2026-09-03",
+   "bank_text": "HISCOX INSURANCE DD",
+   "receipt_note": "Business insurance premium",
+   "amount": 186,
+   "posted": {
+    "nominal": "7300 Insurance",
+    "ct": "allowable",
+    "vat": "exempt",
+    "vat_label": "Exempt Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "exempt",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L096"
+  },
+  {
+   "date": "2026-09-04",
+   "bank_text": "HALFORDS 0412",
+   "receipt_note": "Child car seat",
+   "amount": 149,
+   "posted": {
+    "nominal": "0030 Office & computer equipment (fixed asset)",
+    "ct": "capital",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": true,
+   "id": "L097"
+  },
+  {
+   "date": "2026-09-05",
+   "bank_text": "VIKING DIRECT",
+   "receipt_note": "Printer paper, toner",
+   "amount": 107.02,
+   "posted": {
+    "nominal": "7500 Postage & stationery",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L098"
+  },
+  {
+   "date": "2026-09-05",
+   "bank_text": "HMRC CUMBERNAULD PAYE",
+   "receipt_note": "Monthly PAYE/NIC",
+   "amount": 11082.02,
+   "posted": {
+    "nominal": "2210 PAYE & NI control",
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "rd": null
+   },
+   "planted_mistake": false,
+   "id": "L099"
+  },
+  {
+   "date": "2026-09-06",
+   "bank_text": "VIKING DIRECT",
+   "receipt_note": "Printer paper, toner",
+   "amount": 47.91,
+   "posted": {
+    "nominal": "7500 Postage & stationery",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L100"
+  },
+  {
+   "date": "2026-09-13",
+   "bank_text": "HMRC CORPORATION TAX",
+   "receipt_note": "CT for year to 31/3/26",
+   "amount": 31200,
+   "posted": {
+    "nominal": "7600 Legal & professional fees",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "not_expense",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": true,
+   "id": "L101"
+  },
+  {
+   "date": "2026-09-17",
+   "bank_text": "COMPANIES HOUSE",
+   "receipt_note": "Confirmation statement",
+   "amount": 34,
+   "posted": {
+    "nominal": "7600 Legal & professional fees",
+    "ct": "allowable",
+    "vat": "no_vat",
+    "vat_label": "No VAT"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "no_vat",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L102"
+  },
+  {
+   "date": "2026-09-18",
+   "bank_text": "BARCLAYS BANK CHARGES",
+   "receipt_note": null,
+   "amount": 40.22,
+   "posted": {
+    "nominal": "7750 Bank charges",
+    "ct": "allowable",
+    "vat": "exempt",
+    "vat_label": "Exempt Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "exempt",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L103"
+  },
+  {
+   "date": "2026-09-21",
+   "bank_text": "TRAINLINE.COM",
+   "receipt_note": "Return to Birmingham, customer visit",
+   "amount": 118.83,
+   "posted": {
+    "nominal": "7400 Travel",
+    "ct": "allowable",
+    "vat": "zero",
+    "vat_label": "Zero Rated Expenses"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "zero",
+    "rd": false
+   },
+   "planted_mistake": false,
+   "id": "L104"
+  },
+  {
+   "date": "2026-09-26",
+   "bank_text": "HETZNER ONLINE GMBH",
+   "receipt_note": "GPU servers for robot motion simulation",
+   "amount": 547.96,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "vat_label": "Reverse Charge Expenses (20%)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "reverse_charge",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L105"
+  },
+  {
+   "date": "2026-09-28",
+   "bank_text": "SOLIDWORKS DASSAULT SYS UK",
+   "receipt_note": "CAD licence renewal, engineering team",
+   "amount": 4200,
+   "posted": {
+    "nominal": "7700 Software & subscriptions",
+    "ct": "allowable",
+    "vat": "standard",
+    "vat_label": "20% (VAT on Expenses)"
+   },
+   "key": {
+    "ct": "allowable",
+    "vat": "standard",
+    "rd": true
+   },
+   "planted_mistake": false,
+   "id": "L106"
+  }
+ ]
+}

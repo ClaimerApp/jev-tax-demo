@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jev for tax: live demo</title>
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --bg: #0b0f17; --panel: #131a26; --panel2: #182131; --line: #243044; --text: #e6edf7; --dim: #8592ab;
+    --ok: #22c55e; --check: #f59e0b; --flag: #ef4444; --accent: #3b82f6;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.35 -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; }
+  header { display: flex; gap: 24px; align-items: flex-end; justify-content: space-between; padding: 22px 32px 12px; }
+  h1 { margin: 0; font-size: 32px; letter-spacing: -0.02em; }
+  h1 small { display: block; font-size: 16px; font-weight: 400; color: var(--dim); margin-top: 6px; }
+  .controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+  select, button { font: inherit; font-size: 15px; background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px; }
+  button { cursor: pointer; }
+  button.go { background: var(--accent); border-color: var(--accent); font-weight: 650; padding: 8px 22px; }
+  .tabs { display: flex; gap: 6px; padding: 0 32px; border-bottom: 1px solid var(--line); }
+  .tab { background: none; border: none; border-bottom: 3px solid transparent; border-radius: 0; padding: 10px 14px; color: var(--dim); font-size: 17px; font-weight: 600; }
+  .tab.on { color: var(--text); border-bottom-color: var(--accent); }
+  .view { display: none; padding: 18px 32px 40px; }
+  .view.on { display: block; }
+  .stats { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 14px; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; }
+  .stat .v { font-size: 30px; font-weight: 750; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+  .stat .k { font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+  .stat.flag .v { color: var(--flag); } .stat.check .v { color: var(--check); }
+  .stat.key { display: none; } body.reveal .stat.key { display: block; }
+  .bar { height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; margin-bottom: 14px; }
+  .bar div { height: 100%; width: 0; background: var(--accent); transition: width .15s; }
+  .row2 { display: flex; gap: 22px; align-items: center; margin-bottom: 12px; color: var(--dim); font-size: 15px; flex-wrap: wrap; }
+  .row2 input[type=range] { width: 180px; vertical-align: middle; accent-color: var(--accent); }
+  .row2 b { color: var(--text); font-variant-numeric: tabular-nums; }
+  .chips { display: flex; gap: 6px; }
+  .chip { padding: 4px 12px; border-radius: 999px; font-size: 14px; }
+  .chip.on { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .spacer { flex: 1; }
+  label.tog { display: flex; gap: 6px; align-items: center; cursor: pointer; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th { text-align: left; color: var(--dim); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; padding: 8px 10px; border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--bg); z-index: 1; }
+  td { padding: 7px 10px; border-bottom: 1px solid #1a2333; vertical-align: top; }
+  tr.r { cursor: pointer; }
+  tr.r:hover td { background: #111827; }
+  tr.r.hide { display: none; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .note { color: var(--dim); font-size: 13px; }
+  .posted { font-size: 13px; color: #b8c3d6; }
+  .ans { display: flex; flex-direction: column; gap: 3px; min-width: 120px; }
+  .ans .lbl { font-weight: 600; }
+  .ans.diff .lbl { color: var(--flag); }
+  .ans.unsure .lbl { color: var(--check); }
+  .conf { height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; width: 100px; }
+  .conf div { height: 100%; background: #7dd3fc; }
+  .ans .pc { font-size: 12px; color: var(--dim); font-variant-numeric: tabular-nums; }
+  .pending { color: #3a475e; }
+  .status { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 13px; font-weight: 650; white-space: nowrap; }
+  .status.ok { background: rgba(34,197,94,.14); color: var(--ok); }
+  .status.check { background: rgba(245,158,11,.16); color: var(--check); }
+  .status.flag { background: rgba(239,68,68,.18); color: var(--flag); }
+  .keycol { display: none; font-size: 13px; }
+  body.reveal .keycol { display: table-cell; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 650; }
+  .tag.planted { background: rgba(239,68,68,.18); color: #fca5a5; }
+  .tag.amb { background: rgba(245,158,11,.16); color: #fcd34d; }
+  tr.detail td { background: var(--panel2); font-size: 13px; color: #c9d4e5; }
+  .probs { display: grid; grid-template-columns: repeat(2, minmax(260px, 1fr)); gap: 6px 30px; }
+  .probs .p { display: grid; grid-template-columns: 130px 1fr 44px; gap: 8px; align-items: center; }
+  .probs .p .b { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .probs .p .b div { height: 100%; background: #7dd3fc; }
+  .msg { color: var(--flag); padding: 8px 0; }
+  .mock { display: none; background: #7c2d12; color: #fed7aa; padding: 6px 32px; font-weight: 650; font-size: 14px; }
+  body.is-mock .mock { display: block; }
+  /* R&D cards */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+  .card h3 { margin: 0; font-size: 18px; }
+  .card .co { color: var(--dim); font-size: 13px; }
+  .card .sum { font-size: 13px; color: #b8c3d6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .card.open .sum { -webkit-line-clamp: unset; }
+  .verdict { display: flex; gap: 10px; align-items: center; }
+  .v-q { background: rgba(34,197,94,.14); color: var(--ok); }
+  .v-b { background: rgba(245,158,11,.16); color: var(--check); }
+  .v-n { background: rgba(148,163,184,.18); color: #cbd5e1; }
+  .mini { display: grid; grid-template-columns: 120px 1fr 44px; gap: 8px; align-items: center; font-size: 13px; color: var(--dim); }
+  .mini .b { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .mini .b div { height: 100%; background: #7dd3fc; transition: width .2s; }
+  .expected { display: none; font-size: 13px; color: var(--dim); }
+  body.reveal .expected { display: block; }
+  body.reveal .card.miss { border-color: var(--check); box-shadow: 0 0 0 1px var(--check) inset; }
+  .legend { color: var(--dim); font-size: 13px; margin-top: 14px; }
+</style>
+</head>
+<body>
+<div class="mock">MOCK BACKEND: random answers for rehearsal only. Not Jev. Do not present these numbers.</div>
+<header>
+  <h1 id="title">Every line reviewed. Not a sample.
+    <small id="subtitle"></small></h1>
+  <div class="controls">
+    <select id="backend"></select>
+    <button class="go" id="run">Run ▶</button>
+    <select id="recording"><option value="">Replay a recording…</option></select>
+    <button id="replay">Replay ⟲</button>
+  </div>
+</header>
+<div class="tabs">
+  <button class="tab on" data-view="ledger">Bank lines: tax and VAT</button>
+  <button class="tab" data-view="rd">R&amp;D project screen</button>
+</div>
+
+<section class="view on" id="v-ledger">
+  <div class="stats">
+    <div class="stat"><div class="v" data-s="done">0</div><div class="k">Lines reviewed</div></div>
+    <div class="stat"><div class="v" data-s="time">-</div><div class="k">Elapsed</div></div>
+    <div class="stat"><div class="v" data-s="cost">-</div><div class="k">Cost</div></div>
+    <div class="stat flag"><div class="v" data-s="flag">0</div><div class="k">Jev disagrees with the books</div></div>
+    <div class="stat check"><div class="v" data-s="check">0</div><div class="k">Jev unsure: human checks</div></div>
+    <div class="stat"><div class="v" data-s="okc">0</div><div class="k">Agrees with the books</div></div>
+    <div class="stat key"><div class="v" data-s="caught">-</div><div class="k">Planted mistakes surfaced</div></div>
+    <div class="stat key"><div class="v" data-s="false">-</div><div class="k">False alarms</div></div>
+    <div class="stat key"><div class="v" data-s="amb">-</div><div class="k">Ambiguous lines sent to a human</div></div>
+    <div class="stat key"><div class="v" data-s="acc">-</div><div class="k">Agrees with answer key (CT / VAT)</div></div>
+  </div>
+  <div class="bar"><div id="prog"></div></div>
+  <div class="row2">
+    <span>Send to a human when Jev is less than <b id="thv">80%</b> sure <input type="range" id="th" min="0.5" max="0.98" step="0.01" value="0.8"></span>
+    <span class="chips">
+      <button class="chip on" data-f="all">All</button>
+      <button class="chip" data-f="flag">Disagrees</button>
+      <button class="chip" data-f="check">Unsure</button>
+      <button class="chip" data-f="ok">Agrees</button>
+    </span>
+    <span class="spacer"></span>
+    <label class="tog"><input type="checkbox" id="reveal"> Reveal answer key</label>
+  </div>
+  <table>
+    <thead><tr>
+      <th>Date</th><th>Bank line</th><th style="text-align:right">Amount</th><th>Posted as</th>
+      <th>Jev: tax treatment</th><th>Jev: VAT</th><th>R&amp;D cost?</th><th>Result</th><th class="keycol">Answer key</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <div class="legend">Jev is asked blind: it sees the bank line, any receipt note and what the company does, never the posting. The comparison with the books, and the threshold, are ordinary code.</div>
+</section>
+
+<section class="view" id="v-rd">
+  <div class="stats" style="grid-template-columns: repeat(4, 1fr)">
+    <div class="stat"><div class="v" data-r="done">0</div><div class="k">Projects screened</div></div>
+    <div class="stat"><div class="v" data-r="time">-</div><div class="k">Elapsed</div></div>
+    <div class="stat"><div class="v" data-r="median">-</div><div class="k">Median per project</div></div>
+    <div class="stat key"><div class="v" data-r="agree">-</div><div class="k">Same call as my review</div></div>
+  </div>
+  <div class="row2"><span class="spacer"></span><label class="tog"><input type="checkbox" id="reveal2"> Reveal my calls</label></div>
+  <div class="cards" id="cards"></div>
+  <div class="legend">Five questions per project, answered together in one call. Click a card to read the full summary.</div>
+</section>
+
+<script>
+const CT = { allowable: "Allowable", capital: "Capital", disallowable: "Disallowable", not_expense: "Not an expense" };
+const VAT = { standard: "20%", zero: "Zero", exempt: "Exempt", no_vat: "No VAT", reverse_charge: "Reverse charge" };
+const VERDICT = { qualifies: ["Qualifies", "v-q"], borderline: ["Borderline", "v-b"], does_not_qualify: ["Does not qualify", "v-n"] };
+const EVIDENCE = ["Assertions only", "Vague uncertainties", "Specific and evidenced"];
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const pct = x => x == null || isNaN(x) ? "-" : Math.round(x * 100) + "%";
+const money = n => "£" + n.toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+let cfg, view = "ledger", data = {}, results = {}, source = null, t0 = 0, timer = null, filter = "all", price = null;
+
+async function init() {
+  cfg = await (await fetch("/api/config")).json();
+  for (const b of cfg.backends) $("#backend").add(new Option(`${b.name} · ${b.runs_in}`, b.name));
+  fillRecordings(cfg.recordings);
+  for (const d of ["ledger", "rd"]) data[d] = await (await fetch(`/api/items?dataset=${d}`)).json();
+  $("#backend").onchange = () => document.body.classList.toggle("is-mock", $("#backend").value === "mock");
+  document.body.classList.toggle("is-mock", $("#backend").value === "mock");
+  show("ledger");
+}
+
+function fillRecordings(list) {
+  const sel = $("#recording");
+  [...sel.options].slice(1).forEach(o => o.remove());
+  for (const r of list) sel.add(new Option(r.replace(".json", ""), r));
+}
+
+function show(v) {
+  view = v;
+  $$(".tab").forEach(t => t.classList.toggle("on", t.dataset.view === v));
+  $$(".view").forEach(s => s.classList.toggle("on", s.id === "v-" + v));
+  if (v === "ledger") {
+    $("#title").firstChild.textContent = "Every line reviewed. Not a sample.";
+    $("#subtitle").textContent = `${data.ledger.company.name} · ${data.ledger.items.length} bank lines, Apr to Sep 2026 · invented company, invented transactions`;
+  } else {
+    $("#title").firstChild.textContent = "Does this project look like R&D?";
+    $("#subtitle").textContent = `${data.rd.items.length} invented project summaries, the kind a client sends before a claim`;
+  }
+  reset();
+}
+
+// ---------------------------------------------------------------- ledger
+
+function reset() {
+  if (source) source.close();
+  clearInterval(timer);
+  results = {};
+  $("#prog").style.width = 0;
+  if (view === "ledger") {
+    $("#rows").innerHTML = data.ledger.items.map(it => {
+      const amb = it.key.ct == null || it.key.vat == null;
+      return `<tr class="r" id="r-${it.id}" data-id="${it.id}">
+        <td class="note" style="white-space:nowrap">${it.date.slice(8)}/${it.date.slice(5, 7)}</td>
+        <td><div>${esc(it.bank_text)}</div>${it.receipt_note ? `<div class="note">${esc(it.receipt_note)}</div>` : ""}</td>
+        <td class="num">${money(it.amount)}</td>
+        <td class="posted">${esc(it.posted.nominal)}<br>${esc(it.posted.vat_label)}</td>
+        <td data-c="ct" class="pending">…</td><td data-c="vat" class="pending">…</td><td data-c="rd" class="pending">…</td>
+        <td data-c="st"></td>
+        <td class="keycol">${it.planted_mistake ? '<span class="tag planted">Planted mistake</span><br>' : ""}${amb ? '<span class="tag amb">Needs receipt</span><br>' : ""}${keyText(it)}</td>
+      </tr>`;
+    }).join("");
+    $$("#rows tr.r").forEach(tr => tr.onclick = () => toggleDetail(tr.dataset.id));
+  } else {
+    $("#cards").innerHTML = data.rd.items.map(it => `<div class="card" id="c-${it.id}">
+      <div><h3>${esc(it.title)}</h3><div class="co">${esc(it.company)}</div></div>
+      <div class="sum">${esc(it.summary)}</div>
+      <div class="verdict"><span class="status pending" data-c="verdict">waiting…</span><span class="note" data-c="vconf"></span></div>
+      <div class="mini"><span>Tech advance?</span><span class="b"><div data-b="advance"></div></span><span data-p="advance"></span></div>
+      <div class="mini"><span>Uncertainty?</span><span class="b"><div data-b="uncertainty"></div></span><span data-p="uncertainty"></span></div>
+      <div class="mini"><span>Mostly routine?</span><span class="b"><div data-b="routine"></div></span><span data-p="routine"></span></div>
+      <div class="mini"><span>Evidence quality</span><span class="b"><div data-b="evidence"></div></span><span data-p="evidence"></span></div>
+      <div class="expected">My call: <b>${VERDICT[it.expected][0]}</b></div>
+    </div>`).join("");
+    $$(".card").forEach(c => c.onclick = () => c.classList.toggle("open"));
+  }
+  stats();
+}
+
+function keyText(it) {
+  const k = it.key;
+  return `CT: ${k.ct ? CT[k.ct] : "?"} · VAT: ${k.vat ? VAT[k.vat] : "?"}`;
+}
+
+function status(it, a, th) {
+  const one = (q, posted) => a[q].confidence < th ? "check" : a[q].choice !== posted ? "flag" : "ok";
+  const ct = one("ct", it.posted.ct), vat = one("vat", it.posted.vat);
+  return { ct, vat, line: [ct, vat].includes("flag") ? "flag" : [ct, vat].includes("check") ? "check" : "ok" };
+}
+
+function ansCell(a, labels, posted, st) {
+  const cls = st === "flag" ? "diff" : st === "check" ? "unsure" : "";
+  return `<div class="ans ${cls}"><span class="lbl">${labels[a.choice]}</span>
+    <span class="conf"><div style="width:${pct(a.confidence)}"></div></span><span class="pc">${pct(a.confidence)} sure</span></div>`;
+}
+
+function paintRow(id) {
+  const it = data.ledger.items.find(x => x.id === id), r = results[id], tr = $("#r-" + id);
+  if (!r || !tr) return;
+  if (r.error) { $('[data-c="st"]', tr).innerHTML = `<span class="status flag">error</span>`; tr.dataset.st = "error"; return; }
+  const th = +$("#th").value, a = r.answers, s = status(it, a, th);
+  for (const [q, labels] of [["ct", CT], ["vat", VAT]]) {
+    const td = $(`[data-c="${q}"]`, tr);
+    td.className = ""; td.innerHTML = ansCell(a[q], labels, it.posted[q], s[q]);
+  }
+  const rd = $('[data-c="rd"]', tr);
+  rd.className = "num"; rd.style.textAlign = "left";
+  rd.innerHTML = `<span style="color:${a.rd.noul >= 0.5 ? "#7dd3fc" : "var(--dim)"}">${a.rd.noul >= 0.5 ? "Yes" : "No"}</span> <span class="pc note">${pct(a.rd.noul)}</span>`;
+  const words = { ok: "✓ Agrees", check: "? Human check", flag: "⚑ Disagrees" };
+  $('[data-c="st"]', tr).innerHTML = `<span class="status ${s.line}">${words[s.line]}</span>`;
+  tr.dataset.st = s.line;
+  tr.classList.toggle("hide", filter !== "all" && filter !== s.line);
+}
+
+function toggleDetail(id) {
+  const tr = $("#r-" + id), next = tr.nextElementSibling;
+  if (next && next.classList.contains("detail")) return next.remove();
+  const r = results[id];
+  if (!r || r.error) return;
+  const block = (title, probs, labels) => `<div><b>${title}</b>${Object.entries(probs).sort((x, y) => y[1] - x[1]).map(([k, p]) =>
+    `<div class="p"><span>${labels[k] ?? k}</span><span class="b"><div style="width:${pct(p)}"></div></span><span>${pct(p)}</span></div>`).join("")}</div>`;
+  tr.insertAdjacentHTML("afterend", `<tr class="detail"><td></td><td colspan="8"><div class="probs">
+    ${block("Tax treatment: full spread", r.answers.ct.probabilities, CT)}${block("VAT: full spread", r.answers.vat.probabilities, VAT)}
+    </div><div class="note" style="margin-top:8px">Answered in ${Math.round(r.ms)} ms · ${r.tokens || "?"} input tokens · no explanation is returned, only these probabilities</div></td></tr>`);
+}
+
+function stats() {
+  if (view === "ledger") {
+    const items = data.ledger.items, th = +$("#th").value;
+    const done = Object.values(results), ok = done.filter(r => !r.error);
+    const st = {};
+    for (const r of ok) st[r.id] = status(items.find(x => x.id === r.id), r.answers, th).line;
+    const count = k => Object.values(st).filter(x => x === k).length;
+    const set = (k, v) => $(`[data-s="${k}"]`).textContent = v;
+    set("done", `${done.length}/${items.length}`);
+    set("flag", count("flag")); set("check", count("check")); set("okc", count("ok"));
+    const tokens = ok.reduce((s, r) => s + (r.tokens || 0), 0);
+    set("cost", price == null ? "-" : price === 0 ? ($("#backend").value === "kev" ? "$0 (local)" : "$0") : "$" + (tokens * price / 1e6).toFixed(5));
+    const planted = items.filter(i => i.planted_mistake && st[i.id]);
+    const clean = items.filter(i => !i.planted_mistake && i.key.ct && i.key.vat && st[i.id]);
+    const amb = items.filter(i => (!i.key.ct || !i.key.vat) && st[i.id]);
+    set("caught", planted.length ? `${planted.filter(i => st[i.id] !== "ok").length}/${planted.length}` : "-");
+    set("false", clean.length ? clean.filter(i => st[i.id] === "flag").length : "-");
+    set("amb", amb.length ? `${amb.filter(i => st[i.id] !== "ok").length}/${amb.length}` : "-");
+    const acc = q => { const rs = ok.filter(r => items.find(x => x.id === r.id).key[q]); return rs.length ? rs.filter(r => r.answers[q].choice === items.find(x => x.id === r.id).key[q]).length / rs.length : null; };
+    set("acc", ok.length ? `${pct(acc("ct"))} / ${pct(acc("vat"))}` : "-");
+  } else {
+    const done = Object.values(results), ok = done.filter(r => !r.error);
+    const set = (k, v) => $(`[data-r="${k}"]`).textContent = v;
+    set("done", `${done.length}/${data.rd.items.length}`);
+    const ms = ok.map(r => r.ms).sort((a, b) => a - b);
+    set("median", ms.length ? Math.round(ms[ms.length >> 1]) + " ms" : "-");
+    set("agree", ok.length ? `${ok.filter(r => r.answers.verdict.choice === data.rd.items.find(x => x.id === r.id).expected).length}/${ok.length}` : "-");
+  }
+}
+
+function paintCard(id) {
+  const r = results[id], c = $("#c-" + id);
+  if (!r || !c) return;
+  if (r.error) { $('[data-c="verdict"]', c).textContent = "error"; return; }
+  const a = r.answers, v = VERDICT[a.verdict.choice];
+  const vs = $('[data-c="verdict"]', c);
+  vs.className = "status " + v[1]; vs.textContent = v[0];
+  $('[data-c="vconf"]', c).textContent = `${pct(a.verdict.confidence)} sure · ${Math.round(r.ms)} ms`;
+  for (const q of ["advance", "uncertainty", "routine"]) {
+    $(`[data-b="${q}"]`, c).style.width = pct(a[q].noul);
+    $(`[data-p="${q}"]`, c).textContent = pct(a[q].noul);
+  }
+  const e = a.evidence.score; // 0..2, probability-weighted
+  $('[data-b="evidence"]', c).style.width = pct(e / 2);
+  $('[data-p="evidence"]', c).textContent = e.toFixed(1) + "/2";
+  c.classList.toggle("miss", a.verdict.choice !== data.rd.items.find(x => x.id === id).expected);
+  $('[data-p="evidence"]', c).title = EVIDENCE[Math.round(e)];
+}
+
+// ---------------------------------------------------------------- running
+
+function start(url) {
+  reset();
+  const b = cfg.backends.find(x => x.name === $("#backend").value);
+  price = b ? b.price : null;
+  source = new EventSource(url);
+  source.addEventListener("start", e => {
+    const d = JSON.parse(e.data);
+    const bb = cfg.backends.find(x => x.name === d.backend);
+    if (bb) { price = bb.price; $("#backend").value = d.backend; document.body.classList.toggle("is-mock", d.backend === "mock"); }
+    t0 = performance.now();
+    timer = setInterval(() => {
+      const s = ((performance.now() - t0) / 1000).toFixed(1) + " s";
+      $(view === "ledger" ? '[data-s="time"]' : '[data-r="time"]').textContent = s;
+    }, 100);
+  });
+  source.addEventListener("result", e => {
+    const r = JSON.parse(e.data);
+    results[r.id] = r;
+    view === "ledger" ? paintRow(r.id) : paintCard(r.id);
+    $("#prog").style.width = pct(Object.keys(results).length / data[view].items.length);
+    stats();
+  });
+  source.addEventListener("failed", e => { finish(); alert("Backend failed: " + JSON.parse(e.data).error); });
+  source.addEventListener("done", async () => {
+    finish();
+    const c = await (await fetch("/api/config")).json();
+    fillRecordings(c.recordings);
+  });
+  source.onerror = () => { if (source && source.readyState !== EventSource.CLOSED) finish(); };
+}
+
+function finish() {
+  if (source) source.close();
+  source = null;
+  clearInterval(timer);
+}
+
+$("#run").onclick = () => start(`/api/run?dataset=${view}&backend=${$("#backend").value}`);
+$("#replay").onclick = () => {
+  const f = $("#recording").value;
+  if (!f) return;
+  const ds = f.split("__")[0];
+  if (ds !== view) show(ds);
+  start(`/api/replay?file=${encodeURIComponent(f)}`);
+};
+$$(".tab").forEach(t => t.onclick = () => show(t.dataset.view));
+$("#th").oninput = () => {
+  $("#thv").textContent = pct(+$("#th").value);
+  Object.keys(results).forEach(paintRow);
+  stats();
+};
+$$(".chip").forEach(c => c.onclick = () => {
+  filter = c.dataset.f;
+  $$(".chip").forEach(x => x.classList.toggle("on", x === c));
+  $$("#rows tr.detail").forEach(x => x.remove());
+  $$("#rows tr.r").forEach(tr => tr.classList.toggle("hide", filter !== "all" && tr.dataset.st !== filter));
+});
+const rev = on => { document.body.classList.toggle("reveal", on); $("#reveal").checked = on; $("#reveal2").checked = on; };
+$("#reveal").onchange = e => rev(e.target.checked);
+$("#reveal2").onchange = e => rev(e.target.checked);
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "SELECT" || e.metaKey || e.ctrlKey) return;
+  if (e.key === "r") $("#run").click();
+  if (e.key === "k") rev(!document.body.classList.contains("reveal"));
+});
+init();
+</script>
+</body>
+</html>
