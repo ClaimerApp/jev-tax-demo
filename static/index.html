@@ -28,7 +28,9 @@
   .stat .v { font-size: 30px; font-weight: 750; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
   .stat .k { font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
   .stat.flag .v { color: var(--flag); } .stat.check .v { color: var(--check); }
-  .stat.key { display: none; } body.reveal .stat.key { display: block; }
+  .stat .sub { font-size: 12px; color: var(--dim); margin-top: 4px; }
+  .meta { display: flex; gap: 22px; color: var(--dim); font-size: 14px; margin-bottom: 8px; font-variant-numeric: tabular-nums; }
+  .meta b { color: var(--text); font-weight: 600; }
   .bar { height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; margin-bottom: 14px; }
   .bar div { height: 100%; width: 0; background: var(--accent); transition: width .15s; }
   .row2 { display: flex; gap: 22px; align-items: center; margin-bottom: 12px; color: var(--dim); font-size: 15px; flex-wrap: wrap; }
@@ -48,23 +50,27 @@
   td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .note { color: var(--dim); font-size: 13px; }
   .posted { font-size: 13px; color: #b8c3d6; }
-  .ans { display: flex; flex-direction: column; gap: 3px; min-width: 120px; }
-  .ans .lbl { font-weight: 600; }
-  .ans.diff .lbl { color: var(--flag); }
-  .ans.unsure .lbl { color: var(--check); }
-  .conf { height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; width: 100px; }
-  .conf div { height: 100%; background: #7dd3fc; }
-  .ans .pc { font-size: 12px; color: var(--dim); font-variant-numeric: tabular-nums; }
+  th.q, td.q { border-left: 1px solid var(--line); padding-left: 16px; }
+  td.num { padding-right: 28px; }
+  .trio > div { height: 24px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .trio .rl { flex: none; width: 74px; color: var(--dim); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+  .trio .jev { font-weight: 600; }
+  .trio .pc { font-size: 12px; color: var(--dim); font-weight: 400; font-variant-numeric: tabular-nums; }
+  .trio .status { padding: 1px 8px; font-size: 12px; }
+  .good { color: var(--ok); } .bad { color: var(--flag); } .unsure { color: var(--check); }
+  .need { color: var(--dim); font-style: italic; }
+  .joker { font-size: 20px; line-height: 1; }
+  .stat .v .of { font-size: 18px; font-weight: 600; color: var(--dim); margin-left: 8px; }
+  td.bank { width: 250px; font-size: 14px; }
+  .bank .rnote { margin-top: 3px; font-size: 13px; font-style: italic; color: #b8c3d6; }
+  .bank .coded { margin-top: 5px; font-size: 12px; color: var(--dim); }
+  .bank .code { display: inline-block; padding: 0 5px; margin-right: 4px; border: 1px solid var(--line); border-radius: 4px; font-variant-numeric: tabular-nums; }
+  th .hacc:not(:empty) { display: inline-block; margin-left: 10px; padding: 2px 10px; border-radius: 999px; background: var(--text); color: var(--bg); text-transform: none; letter-spacing: 0; font-size: 14px; font-weight: 700; }
   .pending { color: #3a475e; }
   .status { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 13px; font-weight: 650; white-space: nowrap; }
   .status.ok { background: rgba(34,197,94,.14); color: var(--ok); }
   .status.check { background: rgba(245,158,11,.16); color: var(--check); }
   .status.flag { background: rgba(239,68,68,.18); color: var(--flag); }
-  .keycol { display: none; font-size: 13px; }
-  body.reveal .keycol { display: table-cell; }
-  .tag { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 650; }
-  .tag.planted { background: rgba(239,68,68,.18); color: #fca5a5; }
-  .tag.amb { background: rgba(245,158,11,.16); color: #fcd34d; }
   tr.detail td { background: var(--panel2); font-size: 13px; color: #c9d4e5; }
   .probs { display: grid; grid-template-columns: repeat(2, minmax(260px, 1fr)); gap: 6px 30px; }
   .probs .p { display: grid; grid-template-columns: 130px 1fr 44px; gap: 8px; align-items: center; }
@@ -78,19 +84,30 @@
   .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
   .card h3 { margin: 0; font-size: 18px; }
   .card .co { color: var(--dim); font-size: 13px; }
-  .card .sum { font-size: 13px; color: #b8c3d6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .card .sum { font-size: 16px; line-height: 1.45; color: #c9d4e5; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
   .card.open .sum { -webkit-line-clamp: unset; }
-  .verdict { display: flex; gap: 10px; align-items: center; }
-  .v-q { background: rgba(34,197,94,.14); color: var(--ok); }
-  .v-b { background: rgba(245,158,11,.16); color: var(--check); }
-  .v-n { background: rgba(148,163,184,.18); color: #cbd5e1; }
+  .card.hide { display: none; }
   .mini { display: grid; grid-template-columns: 120px 1fr 44px; gap: 8px; align-items: center; font-size: 13px; color: var(--dim); }
   .mini .b { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
-  .mini .b div { height: 100%; background: #7dd3fc; transition: width .2s; }
-  .expected { display: none; font-size: 13px; color: var(--dim); }
-  body.reveal .expected { display: block; }
-  body.reveal .card.miss { border-color: var(--check); box-shadow: 0 0 0 1px var(--check) inset; }
+  .mini .b div { width: 0; height: 100%; background: #7dd3fc; transition: width .2s; }
+  .card .trio { padding: 6px 10px; border: 1px dashed var(--accent); border-radius: 10px; background: rgba(59,130,246,.10); font-size: 15px; }
   .legend { color: var(--dim); font-size: 13px; margin-top: 14px; }
+  /* What the model is sent: a full screen of its own, sized for a shared screen */
+  #sent { position: fixed; inset: 0; z-index: 10; overflow: auto; padding: 28px 48px 40px; background: var(--bg); font-size: 18px; line-height: 1.45; }
+  #sent[hidden] { display: none; }
+  #sent .top { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 22px; }
+  #sent h2 { margin: 0; font-size: 34px; letter-spacing: -0.02em; }
+  #sent h2 small { display: block; margin-top: 6px; font-size: 18px; font-weight: 400; color: var(--dim); }
+  .sent-grid { display: grid; grid-template-columns: minmax(380px, 1fr) 2fr; gap: 36px; }
+  #sent h4 { margin: 0 0 10px; font-size: 15px; font-weight: 600; color: var(--dim); text-transform: uppercase; letter-spacing: 0.05em; }
+  #sent pre { margin: 0; padding: 16px 18px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; white-space: pre-wrap; font-size: 16px; line-height: 1.5; color: #dbe4f0; }
+  .sq-list { columns: 2; column-gap: 36px; }
+  .sq { break-inside: avoid; margin-bottom: 20px; color: #dbe4f0; }
+  .sq b { font-size: 20px; }
+  .sq .pc { font-size: 15px; }
+  .sq ul { margin: 6px 0 0; padding-left: 22px; color: #c9d4e5; }
+  #sent code { font-size: 16px; padding: 0 5px; border-radius: 4px; background: var(--panel2); color: var(--text); }
+  #sent .total { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 24px; color: var(--text); }
 </style>
 </head>
 <body>
@@ -111,56 +128,71 @@
 </div>
 
 <section class="view on" id="v-ledger">
-  <div class="stats">
-    <div class="stat"><div class="v" data-s="done">0</div><div class="k">Lines reviewed</div></div>
-    <div class="stat"><div class="v" data-s="time">-</div><div class="k">Elapsed</div></div>
-    <div class="stat"><div class="v" data-s="cost">-</div><div class="k">Cost</div></div>
-    <div class="stat flag"><div class="v" data-s="flag">0</div><div class="k">Jev disagrees with the books</div></div>
-    <div class="stat check"><div class="v" data-s="check">0</div><div class="k">Jev unsure: human checks</div></div>
-    <div class="stat"><div class="v" data-s="okc">0</div><div class="k">Agrees with the books</div></div>
-    <div class="stat key"><div class="v" data-s="caught">-</div><div class="k">Planted mistakes surfaced</div></div>
-    <div class="stat key"><div class="v" data-s="false">-</div><div class="k">False alarms</div></div>
-    <div class="stat key"><div class="v" data-s="amb">-</div><div class="k">Ambiguous lines sent to a human</div></div>
-    <div class="stat key"><div class="v" data-s="acc">-</div><div class="k">Agrees with answer key (CT / VAT)</div></div>
+  <div class="meta">
+    <span><b data-s="done">0</b> lines reviewed</span><span><b data-s="time">-</b> elapsed</span>
+    <span><b data-s="median">-</b> median per line</span><span><b data-s="cost">-</b> cost</span>
   </div>
   <div class="bar"><div id="prog"></div></div>
+  <div class="stats" style="grid-template-columns: repeat(3, 1fr)">
+    <div class="stat"><div class="v" data-s="caught">-</div><div class="k">Coding mistakes caught</div><div class="sub"><span class="who">Jev</span> disagreed with the coding, or sent the line to a human</div></div>
+    <div class="stat"><div class="v" data-s="wrongflag">-</div><div class="k">Correct coding wrongly challenged</div><div class="sub"><span class="who">Jev</span> was sure the coding was wrong, but it was right</div></div>
+    <div class="stat check"><div class="v" data-s="human">-</div><div class="k">Sent to a human</div><div class="sub" data-s="humansub"></div></div>
+  </div>
   <div class="row2">
-    <span>Send to a human when Jev is less than <b id="thv">80%</b> sure <input type="range" id="th" min="0.5" max="0.98" step="0.01" value="0.8"></span>
+    <span>Send to a human when <span class="who">Jev</span> is less than <b class="thv">80%</b> sure <input type="range" class="th" min="0.5" max="0.98" step="0.01" value="0.8"></span>
     <span class="chips">
       <button class="chip on" data-f="all">All</button>
-      <button class="chip" data-f="flag">Disagrees</button>
+      <button class="chip" data-f="coded-wrong">🤡 Planted mistakes</button>
       <button class="chip" data-f="check">Unsure</button>
-      <button class="chip" data-f="ok">Agrees</button>
+      <button class="chip" data-f="jev-wrong"><span class="who">Jev</span> wrong</button>
     </span>
     <span class="spacer"></span>
-    <label class="tog"><input type="checkbox" id="reveal"> Reveal answer key</label>
+    <button class="chip sent-btn">What <span class="who">Jev</span> is sent</button>
   </div>
   <table>
     <thead><tr>
-      <th>Date</th><th>Bank line</th><th style="text-align:right">Amount</th><th>Posted as</th>
-      <th>Jev: tax treatment</th><th>Jev: VAT</th><th>R&amp;D cost?</th><th>Result</th><th class="keycol">Answer key</th>
+      <th>Date</th><th class="bank">Bank line</th><th style="text-align:right">Amount</th>
+      <th class="q">Tax treatment<span class="hacc" data-s="acc-ct"></span></th><th class="q">VAT<span class="hacc" data-s="acc-vat"></span></th><th class="q">R&amp;D cost?<span class="hacc" data-s="acc-rd"></span></th>
     </tr></thead>
     <tbody id="rows"></tbody>
   </table>
-  <div class="legend">Jev is asked blind: it sees the bank line, any receipt note and what the company does, never the posting. The comparison with the books, and the threshold, are ordinary code.</div>
+  <div class="legend"><span class="who">Jev</span> is asked blind: it sees the bank line, any receipt note and what the company does, never the coding. Comparing with the coding and the correct answer, and the threshold, are ordinary code. Click a line for <span class="who">Jev</span>'s full spread. "Correct" on the column headers counts every line; where the answer needs a receipt, being unsure is the correct answer. 🤡 marks coding we got wrong on purpose.</div>
 </section>
 
 <section class="view" id="v-rd">
-  <div class="stats" style="grid-template-columns: repeat(4, 1fr)">
-    <div class="stat"><div class="v" data-r="done">0</div><div class="k">Projects screened</div></div>
-    <div class="stat"><div class="v" data-r="time">-</div><div class="k">Elapsed</div></div>
-    <div class="stat"><div class="v" data-r="median">-</div><div class="k">Median per project</div></div>
-    <div class="stat key"><div class="v" data-r="agree">-</div><div class="k">Same call as my review</div></div>
+  <div class="meta">
+    <span><b data-r="done">0</b> projects screened</span><span><b data-r="time">-</b> elapsed</span>
+    <span><b data-r="median">-</b> median per project</span><span><b data-r="cost">-</b> cost</span>
   </div>
-  <div class="row2"><span class="spacer"></span><label class="tog"><input type="checkbox" id="reveal2"> Reveal my calls</label></div>
+  <div class="stats" style="grid-template-columns: repeat(3, 1fr)">
+    <div class="stat"><div class="v" data-r="agree">-</div><div class="k">Same call as my review</div><div class="sub"><span class="who">Jev</span>'s verdict matches mine, sure or unsure</div></div>
+    <div class="stat"><div class="v" data-r="surewrong">-</div><div class="k">Confidently wrong</div><div class="sub"><span class="who">Jev</span> was sure, and disagreed with my call</div></div>
+    <div class="stat check"><div class="v" data-r="human">-</div><div class="k">Sent to a human</div><div class="sub"><span class="who">Jev</span> less sure than the threshold</div></div>
+  </div>
+  <div class="row2">
+    <span>Send to a human when <span class="who">Jev</span> is less than <b class="thv">80%</b> sure <input type="range" class="th" min="0.5" max="0.98" step="0.01" value="0.8"></span>
+    <span class="chips">
+      <button class="chip on" data-f="all">All</button>
+      <button class="chip" data-f="check">Unsure</button>
+      <button class="chip" data-f="jev-wrong"><span class="who">Jev</span> wrong</button>
+    </span>
+    <span class="spacer"></span>
+    <button class="chip sent-btn">What <span class="who">Jev</span> is sent</button>
+  </div>
   <div class="cards" id="cards"></div>
-  <div class="legend">Five questions per project, answered together in one call. Click a card to read the full summary.</div>
+  <div class="legend">Five questions per project, answered together in one call. "My call" is my own review as the correct answer, not HMRC's. Click a card to read the full summary.</div>
 </section>
+
+<div id="sent" hidden></div>
 
 <script>
 const CT = { allowable: "Allowable", capital: "Capital", disallowable: "Disallowable", not_expense: "Not an expense" };
 const VAT = { standard: "20%", zero: "Zero", exempt: "Exempt", no_vat: "No VAT", reverse_charge: "Reverse charge" };
-const VERDICT = { qualifies: ["Qualifies", "v-q"], borderline: ["Borderline", "v-b"], does_not_qualify: ["Does not qualify", "v-n"] };
+const RD = { true: "Yes", false: "No" };
+const LABELS = { ct: CT, vat: VAT, rd: RD };
+const NAMES = { jev: "Jev", eigenjev: "EigenJev", mock: "Mock" };
+const setWho = () => $$(".who").forEach(e => e.textContent = NAMES[$("#backend").value] ?? $("#backend").value);
+const VERDICT = { qualifies: "Potentially qualifies", borderline: "Borderline", does_not_qualify: "Does not qualify" };
 const EVIDENCE = ["Assertions only", "Vague uncertainties", "Specific and evidenced"];
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -175,7 +207,7 @@ async function init() {
   for (const b of cfg.backends) $("#backend").add(new Option(`${b.name} · ${b.runs_in}`, b.name));
   fillRecordings(cfg.recordings);
   for (const d of ["ledger", "rd"]) data[d] = await (await fetch(`/api/items?dataset=${d}`)).json();
-  $("#backend").onchange = () => document.body.classList.toggle("is-mock", $("#backend").value === "mock");
+  $("#backend").onchange = () => { document.body.classList.toggle("is-mock", $("#backend").value === "mock"); setWho(); };
   document.body.classList.toggle("is-mock", $("#backend").value === "mock");
   show("ledger");
 }
@@ -197,6 +229,7 @@ function show(v) {
     $("#title").firstChild.textContent = "Does this project look like R&D?";
     $("#subtitle").textContent = `${data.rd.items.length} invented project summaries, the kind a client sends before a claim`;
   }
+  setFilter("all");
   reset();
 }
 
@@ -208,69 +241,125 @@ function reset() {
   results = {};
   $("#prog").style.width = 0;
   if (view === "ledger") {
-    $("#rows").innerHTML = data.ledger.items.map(it => {
-      const amb = it.key.ct == null || it.key.vat == null;
-      return `<tr class="r" id="r-${it.id}" data-id="${it.id}">
+    $("#rows").innerHTML = data.ledger.items.map(it => `<tr class="r${it.planted_mistake ? " coded-wrong" : ""}" id="r-${it.id}" data-id="${it.id}">
         <td class="note" style="white-space:nowrap">${it.date.slice(8)}/${it.date.slice(5, 7)}</td>
-        <td><div>${esc(it.bank_text)}</div>${it.receipt_note ? `<div class="note">${esc(it.receipt_note)}</div>` : ""}</td>
+        <td class="bank"><div>${esc(it.bank_text)}</div>${it.receipt_note ? `<div class="rnote">${esc(it.receipt_note)}</div>` : ""}<div class="coded">Coded to <span class="code">${esc(it.posted.nominal.slice(0, 4))}</span>${esc(it.posted.nominal.slice(5))}</div></td>
         <td class="num">${money(it.amount)}</td>
-        <td class="posted">${esc(it.posted.nominal)}<br>${esc(it.posted.vat_label)}</td>
-        <td data-c="ct" class="pending">…</td><td data-c="vat" class="pending">…</td><td data-c="rd" class="pending">…</td>
-        <td data-c="st"></td>
-        <td class="keycol">${it.planted_mistake ? '<span class="tag planted">Planted mistake</span><br>' : ""}${amb ? '<span class="tag amb">Needs receipt</span><br>' : ""}${keyText(it)}</td>
-      </tr>`;
-    }).join("");
+        ${["ct", "vat", "rd"].map(q => `<td class="q" data-c="${q}">${trio(it, q)}</td>`).join("")}
+      </tr>`).join("");
     $$("#rows tr.r").forEach(tr => tr.onclick = () => toggleDetail(tr.dataset.id));
   } else {
     $("#cards").innerHTML = data.rd.items.map(it => `<div class="card" id="c-${it.id}">
       <div><h3>${esc(it.title)}</h3><div class="co">${esc(it.company)}</div></div>
       <div class="sum">${esc(it.summary)}</div>
-      <div class="verdict"><span class="status pending" data-c="verdict">waiting…</span><span class="note" data-c="vconf"></span></div>
       <div class="mini"><span>Tech advance?</span><span class="b"><div data-b="advance"></div></span><span data-p="advance"></span></div>
       <div class="mini"><span>Uncertainty?</span><span class="b"><div data-b="uncertainty"></div></span><span data-p="uncertainty"></span></div>
       <div class="mini"><span>Mostly routine?</span><span class="b"><div data-b="routine"></div></span><span data-p="routine"></span></div>
       <div class="mini"><span>Evidence quality</span><span class="b"><div data-b="evidence"></div></span><span data-p="evidence"></span></div>
-      <div class="expected">My call: <b>${VERDICT[it.expected][0]}</b></div>
+      <div class="trio"><div><span class="rl">My call</span>${VERDICT[it.expected]}</div>
+        <div class="jev"><span class="rl who">Jev</span><span data-c="verdict"><span class="pending">…</span></span></div></div>
     </div>`).join("");
     $$(".card").forEach(c => c.onclick = () => c.classList.toggle("open"));
   }
   stats();
+  setWho();
 }
 
-function keyText(it) {
-  const k = it.key;
-  return `CT: ${k.ct ? CT[k.ct] : "?"} · VAT: ${k.vat ? VAT[k.vat] : "?"}`;
+// Jev's pick and how sure it is; R&D cost is a yes/no probability, so "sure" is distance from 50/50.
+function pick(a, q) {
+  if (q === "rd") return { choice: a.rd.noul >= 0.5, conf: Math.max(a.rd.noul, 1 - a.rd.noul) };
+  return { choice: a[q].choice, conf: a[q].confidence };
 }
 
+// Below the threshold, the line goes to a human.
+const unsureOf = (a, q, th) => pick(a, q).conf < th;
+// Right if it matches the answer key; where the key says a receipt is needed, the right answer is to be unsure.
+const isRight = (it, a, q, th) => it.key[q] == null ? unsureOf(a, q, th) : pick(a, q).choice === it.key[q];
+
+function trio(it, q, a, th) {
+  const L = LABELS[q], key = it.key[q], posted = q === "rd" ? null : it.posted[q];
+  const coded = q === "rd" ? `<span class="note">-</span>`
+    : key != null && posted !== key ? `${L[posted]} <span class="joker" title="Deliberately miscoded for Jev to catch">🤡</span>` : L[posted];
+  const correct = key == null ? `<span class="need">Needs receipt</span>` : L[key];
+  let jev = `<span class="pending">…</span>`;
+  if (a) {
+    const p = pick(a, q);
+    jev = resultLine(L[p.choice], p.conf, p.conf < th, key == null ? null : p.choice === key, isRight(it, a, q, th));
+  }
+  return `<div class="trio"><div><span class="rl">Coded</span>${coded}</div><div><span class="rl">Correct</span>${correct}</div>
+    <div class="jev"><span class="rl who">${NAMES[$("#backend").value] ?? "Jev"}</span>${jev}</div></div>`;
+}
+
+// The correct answer is on the line above, so say whether Jev matched it, and what it said only when it didn't.
+// guessRight is null when there is no answer key to compare the guess with.
+function resultLine(said, conf, unsure, guessRight, right) {
+  const pc = `<span class="pc">confidence ${pct(conf)}</span>`;
+  if (unsure) return `<span class="unsure">⚠ Unsure</span> ${pc} <span class="pc">· ${guessRight == null ? `guess ${said}` : guessRight ? "guess correct" : `guess incorrect: ${said}`}</span>`;
+  return right ? `<span class="good">✓ Correct</span> ${pc}` : `<span class="bad">✗ Incorrect</span> ${pc} <span class="pc">· thought ${said}</span>`;
+}
+
+// Jev against the coding, as the reviewer would see it without an answer key.
 function status(it, a, th) {
-  const one = (q, posted) => a[q].confidence < th ? "check" : a[q].choice !== posted ? "flag" : "ok";
-  const ct = one("ct", it.posted.ct), vat = one("vat", it.posted.vat);
-  return { ct, vat, line: [ct, vat].includes("flag") ? "flag" : [ct, vat].includes("check") ? "check" : "ok" };
+  const one = q => a[q].confidence < th ? "check" : a[q].choice !== it.posted[q] ? "flag" : "ok";
+  const ct = one("ct"), vat = one("vat");
+  return [ct, vat].includes("flag") ? "flag" : [ct, vat].includes("check") ? "check" : "ok";
 }
 
-function ansCell(a, labels, posted, st) {
-  const cls = st === "flag" ? "diff" : st === "check" ? "unsure" : "";
-  return `<div class="ans ${cls}"><span class="lbl">${labels[a.choice]}</span>
-    <span class="conf"><div style="width:${pct(a.confidence)}"></div></span><span class="pc">${pct(a.confidence)} sure</span></div>`;
+function rowTags(it, r, th) {
+  const qs = ["ct", "vat", "rd"];
+  const wrong = qs.some(q => !isRight(it, r.answers, q, th));  // same rule as the header %
+  return { check: qs.some(q => unsureOf(r.answers, q, th)), "jev-wrong": wrong, "coded-wrong": it.planted_mistake };
 }
+
+function applyFilter(el) {
+  el.classList.toggle("hide", filter !== "all" && !el.classList.contains(filter));
+}
+
+const threshold = () => +$(".th").value;
 
 function paintRow(id) {
   const it = data.ledger.items.find(x => x.id === id), r = results[id], tr = $("#r-" + id);
   if (!r || !tr) return;
-  if (r.error) { $('[data-c="st"]', tr).innerHTML = `<span class="status flag">error</span>`; tr.dataset.st = "error"; return; }
-  const th = +$("#th").value, a = r.answers, s = status(it, a, th);
-  for (const [q, labels] of [["ct", CT], ["vat", VAT]]) {
-    const td = $(`[data-c="${q}"]`, tr);
-    td.className = ""; td.innerHTML = ansCell(a[q], labels, it.posted[q], s[q]);
-  }
-  const rd = $('[data-c="rd"]', tr);
-  rd.className = "num"; rd.style.textAlign = "left";
-  rd.innerHTML = `<span style="color:${a.rd.noul >= 0.5 ? "#7dd3fc" : "var(--dim)"}">${a.rd.noul >= 0.5 ? "Yes" : "No"}</span> <span class="pc note">${pct(a.rd.noul)}</span>`;
-  const words = { ok: "✓ Agrees", check: "? Human check", flag: "⚑ Disagrees" };
-  $('[data-c="st"]', tr).innerHTML = `<span class="status ${s.line}">${words[s.line]}</span>`;
-  tr.dataset.st = s.line;
-  tr.classList.toggle("hide", filter !== "all" && filter !== s.line);
+  if (r.error) { $('[data-c="ct"] .jev', tr).innerHTML = `<span class="status flag">error</span>`; return; }
+  const th = threshold();
+  for (const q of ["ct", "vat", "rd"]) $(`[data-c="${q}"]`, tr).innerHTML = trio(it, q, r.answers, th);
+  for (const [k, on] of Object.entries(rowTags(it, r, th))) tr.classList.toggle(k, on);
+  applyFilter(tr);
 }
+
+// ---------------------------------------------------------------- what the model is sent
+
+const QNAMES = { ct: "Tax treatment", vat: "VAT", rd: "R&D cost?", advance: "Tech advance?", uncertainty: "Uncertainty?",
+  routine: "Mostly routine?", verdict: "Verdict", evidence: "Evidence quality" };
+const words = x => typeof x === "string" ? x.split(/\s+/).filter(Boolean).length
+  : x && typeof x === "object" ? Object.entries(x).reduce((n, [k, v]) => n + (k === "type" ? 0 : words(v)), 0) : 0;  // "type" is the answer format, not text
+const ticks = s => esc(s).replace(/`([^`]+)`/g, "<code>$1</code>");
+
+async function openSent() {
+  const ds = view, p = await (await fetch(`/api/prompt?dataset=${ds}`)).json();
+  const kind = q => q.type === "choice" ? `pick one of ${Object.keys(q.criteria).length}` : q.type === "noul" ? "yes/no, as a probability" : `score 0 to ${q.criteria.length - 1}`;
+  const criteria = q => q.type === "choice" ? Object.entries(q.criteria).map(([k, v]) => `<li><code>${esc(k)}</code> ${esc(v)}</li>`).join("")
+    : q.type === "score" ? q.criteria.map((v, i) => `<li>${i}: ${esc(v)}</li>`).join("") : "";
+  const qs = Object.entries(p.questions).map(([k, q]) => `<div class="sq"><b>${QNAMES[k] ?? k}</b> <span class="pc">${kind(q)}</span>
+    <div>${ticks(q.instructions)}</div>${criteria(q) ? `<ul>${criteria(q)}</ul>` : ""}</div>`).join("");
+  const one = ds === "ledger" ? "bank line" : "project";
+  $("#sent").innerHTML = `<div class="top">
+      <h2>What <span class="who">Jev</span> is sent<small>${ds === "ledger" ? "Bank lines: tax and VAT" : "R&amp;D project screen"} · one request, in full</small></h2>
+      <button class="chip" id="sent-close">✕ Close (Esc)</button>
+    </div>
+    <div class="sent-grid">
+      <div><h4>The data: one ${one}, for example</h4><pre>${esc(JSON.stringify(p.state, null, 2))}</pre></div>
+      <div><h4>The questions: the same for every ${one}</h4><div class="sq-list">${qs}</div></div>
+    </div>
+    <div class="total">That is the whole request: <b>${words(p)} words</b>, sent once per ${one}. No examples, no training on this data, no chart of accounts.
+      <span class="who">Jev</span> returns only probabilities, no explanation.</div>`;
+  $("#sent-close").onclick = closeSent;
+  $("#sent").hidden = false;
+  $("#sent").scrollTop = 0;
+  setWho();
+}
+
+const closeSent = () => $("#sent").hidden = true;
 
 function toggleDetail(id) {
   const tr = $("#r-" + id), next = tr.nextElementSibling;
@@ -279,38 +368,48 @@ function toggleDetail(id) {
   if (!r || r.error) return;
   const block = (title, probs, labels) => `<div><b>${title}</b>${Object.entries(probs).sort((x, y) => y[1] - x[1]).map(([k, p]) =>
     `<div class="p"><span>${labels[k] ?? k}</span><span class="b"><div style="width:${pct(p)}"></div></span><span>${pct(p)}</span></div>`).join("")}</div>`;
-  tr.insertAdjacentHTML("afterend", `<tr class="detail"><td></td><td colspan="8"><div class="probs">
+  tr.insertAdjacentHTML("afterend", `<tr class="detail"><td></td><td colspan="5"><div class="probs">
     ${block("Tax treatment: full spread", r.answers.ct.probabilities, CT)}${block("VAT: full spread", r.answers.vat.probabilities, VAT)}
-    </div><div class="note" style="margin-top:8px">Answered in ${Math.round(r.ms)} ms · ${r.tokens || "?"} input tokens · no explanation is returned, only these probabilities</div></td></tr>`);
+    </div><div class="note" style="margin-top:8px">R&amp;D cost: ${pct(r.answers.rd.noul)} yes · answered in ${Math.round(r.ms)} ms · ${r.tokens || "?"} input tokens · no explanation is returned, only these probabilities</div></td></tr>`);
 }
 
 function stats() {
   if (view === "ledger") {
-    const items = data.ledger.items, th = +$("#th").value;
+    const items = data.ledger.items, th = threshold(), byId = id => items.find(x => x.id === id);
     const done = Object.values(results), ok = done.filter(r => !r.error);
-    const st = {};
-    for (const r of ok) st[r.id] = status(items.find(x => x.id === r.id), r.answers, th).line;
-    const count = k => Object.values(st).filter(x => x === k).length;
     const set = (k, v) => $(`[data-s="${k}"]`).textContent = v;
     set("done", `${done.length}/${items.length}`);
-    set("flag", count("flag")); set("check", count("check")); set("okc", count("ok"));
+    const ms = ok.map(r => r.ms).sort((a, b) => a - b);
+    set("median", ms.length ? Math.round(ms[ms.length >> 1]) + " ms" : "-");
     const tokens = ok.reduce((s, r) => s + (r.tokens || 0), 0);
-    set("cost", price == null ? "-" : price === 0 ? ($("#backend").value === "kev" ? "$0 (local)" : "$0") : "$" + (tokens * price / 1e6).toFixed(5));
-    const planted = items.filter(i => i.planted_mistake && st[i.id]);
-    const clean = items.filter(i => !i.planted_mistake && i.key.ct && i.key.vat && st[i.id]);
-    const amb = items.filter(i => (!i.key.ct || !i.key.vat) && st[i.id]);
-    set("caught", planted.length ? `${planted.filter(i => st[i.id] !== "ok").length}/${planted.length}` : "-");
-    set("false", clean.length ? clean.filter(i => st[i.id] === "flag").length : "-");
-    set("amb", amb.length ? `${amb.filter(i => st[i.id] !== "ok").length}/${amb.length}` : "-");
-    const acc = q => { const rs = ok.filter(r => items.find(x => x.id === r.id).key[q]); return rs.length ? rs.filter(r => r.answers[q].choice === items.find(x => x.id === r.id).key[q]).length / rs.length : null; };
-    set("acc", ok.length ? `${pct(acc("ct"))} / ${pct(acc("vat"))}` : "-");
+    set("cost", price == null ? "-" : price === 0 ? "$0" : "$" + (tokens * price / 1e6).toFixed(5));
+    if (!ok.length) return ["caught", "wrongflag", "human", "humansub", "acc-ct", "acc-vat", "acc-rd"].forEach(k => set(k, k.startsWith("acc") || k === "humansub" ? "" : "-"));
+    const planted = ok.filter(r => byId(r.id).planted_mistake);
+    const clean = ok.filter(r => { const it = byId(r.id); return !it.planted_mistake && it.key.ct && it.key.vat; });
+    const human = ok.filter(r => rowTags(byId(r.id), r, th).check);
+    const amb = ok.filter(r => { const k = byId(r.id).key; return k.ct == null || k.vat == null; });
+    const share = (k, n, of, showOf = true) => $(`[data-s="${k}"]`).innerHTML = `${showOf ? `${n}/${of}` : n}<span class="of">${pct(n / of)}</span>`;
+    share("caught", planted.filter(r => status(byId(r.id), r.answers, th) !== "ok").length, planted.length);
+    share("wrongflag", clean.filter(r => status(byId(r.id), r.answers, th) === "flag").length, clean.length);
+    share("human", human.length, ok.length, false);
+    set("humansub", `Includes ${amb.filter(r => human.includes(r)).length} of ${amb.length} lines that need a receipt to decide`);
+    const acc = q => ok.filter(r => isRight(byId(r.id), r.answers, q, th)).length / ok.length;
+    for (const q of ["ct", "vat", "rd"]) set("acc-" + q, `${pct(acc(q))} correct`);
   } else {
-    const done = Object.values(results), ok = done.filter(r => !r.error);
+    const done = Object.values(results), ok = done.filter(r => !r.error), th = threshold();
     const set = (k, v) => $(`[data-r="${k}"]`).textContent = v;
     set("done", `${done.length}/${data.rd.items.length}`);
     const ms = ok.map(r => r.ms).sort((a, b) => a - b);
     set("median", ms.length ? Math.round(ms[ms.length >> 1]) + " ms" : "-");
-    set("agree", ok.length ? `${ok.filter(r => r.answers.verdict.choice === data.rd.items.find(x => x.id === r.id).expected).length}/${ok.length}` : "-");
+    const tokens = ok.reduce((s, r) => s + (r.tokens || 0), 0);
+    set("cost", price == null ? "-" : price === 0 ? "$0" : "$" + (tokens * price / 1e6).toFixed(5));
+    if (!ok.length) return ["agree", "surewrong", "human"].forEach(k => set(k, "-"));
+    const right = r => r.answers.verdict.choice === data.rd.items.find(x => x.id === r.id).expected;
+    const unsure = r => r.answers.verdict.confidence < th;
+    const share = (k, n, of, showOf = true) => $(`[data-r="${k}"]`).innerHTML = `${showOf ? `${n}/${of}` : n}<span class="of">${pct(n / of)}</span>`;
+    share("agree", ok.filter(right).length, ok.length);
+    share("surewrong", ok.filter(r => !unsure(r) && !right(r)).length, ok.length);
+    share("human", ok.filter(unsure).length, ok.length, false);
   }
 }
 
@@ -318,10 +417,11 @@ function paintCard(id) {
   const r = results[id], c = $("#c-" + id);
   if (!r || !c) return;
   if (r.error) { $('[data-c="verdict"]', c).textContent = "error"; return; }
-  const a = r.answers, v = VERDICT[a.verdict.choice];
-  const vs = $('[data-c="verdict"]', c);
-  vs.className = "status " + v[1]; vs.textContent = v[0];
-  $('[data-c="vconf"]', c).textContent = `${pct(a.verdict.confidence)} sure · ${Math.round(r.ms)} ms`;
+  const a = r.answers, v = a.verdict, th = threshold();
+  const right = v.choice === data.rd.items.find(x => x.id === id).expected, unsure = v.confidence < th;
+  $('[data-c="verdict"]', c).innerHTML = resultLine(VERDICT[v.choice], v.confidence, unsure, right, right);
+  c.classList.toggle("check", unsure); c.classList.toggle("jev-wrong", !right);
+  applyFilter(c);
   for (const q of ["advance", "uncertainty", "routine"]) {
     $(`[data-b="${q}"]`, c).style.width = pct(a[q].noul);
     $(`[data-p="${q}"]`, c).textContent = pct(a[q].noul);
@@ -329,7 +429,6 @@ function paintCard(id) {
   const e = a.evidence.score; // 0..2, probability-weighted
   $('[data-b="evidence"]', c).style.width = pct(e / 2);
   $('[data-p="evidence"]', c).textContent = e.toFixed(1) + "/2";
-  c.classList.toggle("miss", a.verdict.choice !== data.rd.items.find(x => x.id === id).expected);
   $('[data-p="evidence"]', c).title = EVIDENCE[Math.round(e)];
 }
 
@@ -343,7 +442,7 @@ function start(url) {
   source.addEventListener("start", e => {
     const d = JSON.parse(e.data);
     const bb = cfg.backends.find(x => x.name === d.backend);
-    if (bb) { price = bb.price; $("#backend").value = d.backend; document.body.classList.toggle("is-mock", d.backend === "mock"); }
+    if (bb) { price = bb.price; $("#backend").value = d.backend; document.body.classList.toggle("is-mock", d.backend === "mock"); setWho(); }
     t0 = performance.now();
     timer = setInterval(() => {
       const s = ((performance.now() - t0) / 1000).toFixed(1) + " s";
@@ -381,24 +480,24 @@ $("#replay").onclick = () => {
   start(`/api/replay?file=${encodeURIComponent(f)}`);
 };
 $$(".tab").forEach(t => t.onclick = () => show(t.dataset.view));
-$("#th").oninput = () => {
-  $("#thv").textContent = pct(+$("#th").value);
-  Object.keys(results).forEach(paintRow);
+$$(".th").forEach(t => t.oninput = () => {
+  $$(".th").forEach(x => x.value = t.value);
+  $$(".thv").forEach(x => x.textContent = pct(+t.value));
+  Object.keys(results).forEach(view === "ledger" ? paintRow : paintCard);
   stats();
-};
-$$(".chip").forEach(c => c.onclick = () => {
-  filter = c.dataset.f;
-  $$(".chip").forEach(x => x.classList.toggle("on", x === c));
-  $$("#rows tr.detail").forEach(x => x.remove());
-  $$("#rows tr.r").forEach(tr => tr.classList.toggle("hide", filter !== "all" && tr.dataset.st !== filter));
 });
-const rev = on => { document.body.classList.toggle("reveal", on); $("#reveal").checked = on; $("#reveal2").checked = on; };
-$("#reveal").onchange = e => rev(e.target.checked);
-$("#reveal2").onchange = e => rev(e.target.checked);
+const setFilter = f => {
+  filter = f;
+  $$(".chip[data-f]").forEach(x => x.classList.toggle("on", x.dataset.f === f));
+  $$("#rows tr.detail").forEach(x => x.remove());
+  $$("#rows tr.r, .card").forEach(applyFilter);
+};
+$$(".chip[data-f]").forEach(c => c.onclick = () => setFilter(c.dataset.f));
+$$(".sent-btn").forEach(b => b.onclick = openSent);
 document.addEventListener("keydown", e => {
-  if (e.target.tagName === "SELECT" || e.metaKey || e.ctrlKey) return;
+  if (e.key === "Escape") return closeSent();
+  if (e.target.tagName === "SELECT" || e.metaKey || e.ctrlKey || !$("#sent").hidden) return;
   if (e.key === "r") $("#run").click();
-  if (e.key === "k") rev(!document.body.classList.contains("reveal"));
 });
 init();
 </script>

@@ -87,7 +87,7 @@ LEDGER_QUESTIONS = {"ct": CT, "vat": VAT, "rd": RD}
 
 # ---------------------------------------------------------------- R&D screen: one project summary at a time
 
-VERDICT_LABELS = {"qualifies": "Qualifies", "borderline": "Borderline", "does_not_qualify": "Does not qualify"}
+VERDICT_LABELS = {"qualifies": "Potentially qualifies", "borderline": "Borderline", "does_not_qualify": "Does not qualify"}
 
 ADVANCE = Noul(
     instructions=(

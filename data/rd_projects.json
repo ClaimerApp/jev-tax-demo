@@ -34,7 +34,7 @@
    "company": "Little Loaf Bakery Ltd",
    "title": "Gluten-free sourdough",
    "summary": "We wanted a gluten-free sourdough that tastes as good as our wheat loaf. Our head baker tried around 30 recipes using different flour blends, psyllium husk and hydration levels, and a customer taste panel chose the winner. It is now our best-selling gluten-free product.",
-   "expected": "borderline"
+   "expected": "does_not_qualify"
   },
   {
    "id": "P06",
@@ -83,7 +83,7 @@
    "company": "Brookfield Legal Services Ltd",
    "title": "AI document summaries",
    "summary": "We built a tool that summarises client documents using the OpenAI API. Our developer experimented with prompts, chunking strategies and temperature settings over three months until summaries were accurate enough for fee earners to rely on. Accuracy improved from about 60% to 90% on our test set.",
-   "expected": "borderline"
+   "expected": "does_not_qualify"
   }
  ]
 }

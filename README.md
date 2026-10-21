@@ -21,13 +21,12 @@ cp .env.example .env                 # add your TypeSafe key (and EigenJev if yo
 .venv/bin/python server.py           # http://localhost:8081
 ```
 
-Pick a backend, press **Run** (or `r`). `k` toggles the answer key. Click a ledger row to see the full probability spread. The slider sets the confidence below which a line goes to a person.
+Pick a backend, press **Run** (or `r`). Click a ledger row to see the full probability spread. The slider sets the confidence below which a line goes to a person.
 
 | Backend | Runs in | Notes |
 |---|---|---|
 | `jev` | TypeSafe, US | Needs `TYPESAFE_API_KEY` |
 | `eigenjev` | Eigenwelt, Berlin | Same API, different base URL |
-| `kev` | Your machine | Open weights; start the Kev server first ([jaredpalmer/kev](https://github.com/jaredpalmer/kev)) |
 | `mock` | Nowhere | Random answers under an orange banner. For rehearsing the clicks only; never present its numbers |
 
 All backends speak the same API, so `backends.py` swaps only the base URL.
@@ -55,11 +54,11 @@ Every run, from the web page or the terminal, is saved to `out/`. Pick one from 
 | `data/rd_projects.json` | The 12 project summaries |
 | `tax_questions.py` | Every question, word for word |
 | `engine.py` | Asking, the mock backend, and the rules (threshold, compare with the books) |
-| `backends.py` | Jev, EigenJev and Kev: same SDK, different base URL |
+| `backends.py` | Jev and EigenJev: same SDK, different base URL |
 | `server.py`, `static/index.html` | The web UI |
 | `run.py` | The terminal version |
 
-Built on [assembledadam/typesafe-jev-benchmarking](https://github.com/assembledadam/typesafe-jev-benchmarking), which runs the same three backends on email triage.
+Built on [assembledadam/typesafe-jev-benchmarking](https://github.com/assembledadam/typesafe-jev-benchmarking), which runs the same backends (plus Kev, a local model) on email triage.
 
 ## Privacy
 

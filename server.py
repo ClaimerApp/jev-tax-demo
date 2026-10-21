@@ -52,6 +52,17 @@ def items(dataset: str):
     return engine.load(dataset)
 
 
+@app.get("/api/prompt")
+def prompt(dataset: str):
+    """Everything one request carries, built by the same code as a real run: one example item and every question."""
+    if dataset not in engine.DATASETS:
+        raise HTTPException(404)
+    data = engine.load(dataset)
+    item = next((i for i in data["items"] if i.get("planted_mistake")), data["items"][0])
+    state, questions = engine.build(dataset, data, item)
+    return {"state": state, "questions": {k: q.model_dump(mode="json") for k, q in questions.items()}}
+
+
 @app.get("/api/run")
 def run(dataset: str, backend: str):
     if dataset not in engine.DATASETS or backend not in engine.BACKENDS:
@@ -99,4 +110,5 @@ def replay(file: str):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8081, log_level="warning")
+    # Watch mode: restarts on any .py change. index.html and data/*.json are read per request, so a browser refresh is enough.
+    uvicorn.run("server:app", host="127.0.0.1", port=8081, log_level="warning", reload=True, reload_dirs=[str(HERE)])

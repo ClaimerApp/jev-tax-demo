@@ -21,7 +21,7 @@ import tax_questions as Q  # noqa: E402
 BACKENDS = dict(_BACKENDS) | {"mock": {"base_url": "(offline)", "key": None, "runs_in": "Mock: rehearsal only"}}
 MODELS = dict(_MODELS) | {"mock": "random-not-a-model"}
 PRICE = dict(_PRICE) | {"mock": 0.0}
-WORKERS = {"kev": 1, "jev": 4, "eigenjev": 4, "mock": 6}
+WORKERS = {"jev": 4, "eigenjev": 4, "mock": 6}
 
 DATASETS = {
     "ledger": HERE / "data" / "ledger.json",
