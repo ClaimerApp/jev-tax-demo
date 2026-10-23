@@ -113,7 +113,7 @@
 <body>
 <div class="mock">MOCK BACKEND: random answers for rehearsal only. Not Jev. Do not present these numbers.</div>
 <header>
-  <h1 id="title">Every line reviewed. Not a sample.
+  <h1 id="title">Is every bank line coded right for tax and VAT?
     <small id="subtitle"></small></h1>
   <div class="controls">
     <select id="backend"></select>
@@ -223,7 +223,7 @@ function show(v) {
   $$(".tab").forEach(t => t.classList.toggle("on", t.dataset.view === v));
   $$(".view").forEach(s => s.classList.toggle("on", s.id === "v-" + v));
   if (v === "ledger") {
-    $("#title").firstChild.textContent = "Every line reviewed. Not a sample.";
+    $("#title").firstChild.textContent = "Is every bank line coded right for tax and VAT?";
     $("#subtitle").textContent = `${data.ledger.company.name} · ${data.ledger.items.length} bank lines, Apr to Sep 2026 · invented company, invented transactions`;
   } else {
     $("#title").firstChild.textContent = "Does this project look like R&D?";
